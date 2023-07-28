@@ -1,0 +1,18 @@
+.about-body {
+  padding: 80px 24%;
+}
+.staff-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.about-name {
+  color: var(--maincolor);
+  font-size: 32px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+}

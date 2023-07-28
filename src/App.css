@@ -1,0 +1,43 @@
+:root {
+  --maincolor: #d70018;
+  --mainhovercolor: #df3346;
+  --bodypadding: 56px 10%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+.header {
+  background-color: var(--maincolor);
+  width: 100%;
+  position: fixed;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.logo-header {
+  max-width: 56px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.header-nav {
+  padding: 16px 32px;
+  font-weight: 500;
+}
+
+.header-nav:nth-child(5),
+.header-nav:nth-child(6) {
+  position: absolute;
+}
+.header-nav:nth-child(6) {
+  right: 147px;
+}
+.header-nav:nth-child(5) {
+  right: 0px;
+}
+.header-nav:hover {
+  background-color: var(--mainhovercolor);
+}

@@ -1,0 +1,15 @@
+.filter {
+  font-weight: bold;
+  margin: 20px;
+  width: 20%;
+  height: 8vh;
+  right: 100px;
+  border: 1px solid #ccc;
+}
+.filter-option {
+  font-weight: 500;
+  text-align: center;
+}
+.products-flex {
+  display: flex;
+}

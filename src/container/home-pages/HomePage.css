@@ -1,0 +1,28 @@
+.banner {
+  padding-top: 4px;
+  margin: auto;
+}
+.page-body {
+  padding: var(--bodypadding);
+}
+.info-name {
+  font-size: 32px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  color: var(--maincolor);
+}
+.info-description {
+  font-size: 20px;
+  display: flex;
+  text-align: center;
+}
+.best-seller {
+  color: var(--maincolor);
+  font-size: 32px;
+  font-weight: 500;
+  display: flex;
+  padding: 48px 32px;
+  justify-content: left;
+}
