@@ -1,9 +1,11 @@
-import { Signin } from "../../services/api/auth";
-import "./Login.css";
+import { Signup } from "../../services/api/auth";
+import "./Register.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
-const LoginForm = () => {
+const SignUpForm = () => {
   const navigate = useNavigate();
   const {
     register,
@@ -11,21 +13,33 @@ const LoginForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmitLogin = async (data) => {
-    try {
-      const user = await Signin(data);
-      localStorage.setItem("userReact", JSON.stringify(user?.data));
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-    }
+
+  const [post, setPost] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const handleInput = (event) => {
+    setPost({ ...post, [event.target.name]: event.target.event });
   };
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios.post("");
+  }
+
   return (
     <div>
       <form
         className="login-container"
-        onSubmit={handleSubmit(onSubmitLogin)}
+        onSubmit={handleSubmit}
       >
+        <label htmlFor="name">Tên tài khoản</label>
+        <input
+          {...register("name", { required: true, minLength: 3 })}
+          type="text"
+          placeholder="Enter Name"
+          name="name"
+        />
         <label htmlFor="email">Email</label>
         <input
           {...register("email", { required: true, minLength: 3 })}
@@ -38,7 +52,7 @@ const LoginForm = () => {
         )}
         <label htmlFor="password">Mật khẩu</label>
         <input
-          {...register("password", { required: true, minLength: 5 })}
+          {...register("password", { required: true, minLength: 3 })}
           type="password"
           placeholder="Enter Password"
           name="password"
@@ -53,10 +67,10 @@ const LoginForm = () => {
           type="submit"
           className="login-btn"
         >
-          Đăng nhập
+          Đăng ký
         </button>
       </form>
     </div>
   );
 };
-export default LoginForm;
+export default SignUpForm;

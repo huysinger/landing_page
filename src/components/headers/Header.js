@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 export const menuHeader = [
   {
@@ -11,44 +13,75 @@ export const menuHeader = [
     url: "/product",
   },
   {
+    title: "Phân loại",
+    url: "/category",
+  },
+  {
+    title: "Tin tức",
+    url: "/post",
+  },
+  {
     title: "About Us",
     url: "/about",
   },
-  {
-    title: "Đăng Nhập",
-    url: "/login",
-  },
-  {
-    title: "Đăng Ký",
-    url: "/register",
-  },
 ];
 
-const Header = ({ menu }) => {
+const Header = ({ menu, userInfo }) => {
+  const navigate = useNavigate();
+  const userString = localStorage.getItem("userReact");
   return (
     <div className="header">
       <ul
-        className="nav"
-        style={{ display: "flex" }}
+        className="nav-menu"
+        style={{ display: "flex", justifyContent: "space-between" }}
       >
-        <div className="logo-header">
-          <img
-            src={
-              "https://cdn2.cellphones.com.vn/200x/media/favicon/default/logo-cps.png"
-            }
-            alt="Logo"
-          />
-        </div>
-        {menu?.map((menu, index) => {
-          return (
-            <li
-              className="header-nav"
-              key={index}
-            >
-              <Link to={menu?.url}>{menu?.title}</Link>
+        <ul
+          className="main-nav"
+          style={{ display: "flex" }}
+        >
+          <div className="logo-header">
+            <img
+              src={
+                "https://cdn2.cellphones.com.vn/200x/media/favicon/default/logo-cps.png"
+              }
+              alt="Logo"
+            />
+          </div>
+          {menu?.map((menu, index) => {
+            return (
+              <li
+                className="header-nav"
+                key={index}
+              >
+                <Link to={menu?.url}>{menu?.title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+        {userInfo !== undefined && (
+          <ul className="nav-auth">
+            <li className="auth-nav">
+              <Link to={`/cart`}>
+                <AiOutlineShoppingCart style={{ fontSize: "24px" }} />
+              </Link>
             </li>
-          );
-        })}
+            <li className="auth-nav">
+              <Link to={`/info/${JSON.parse(userString).user.id}`}>
+                {JSON.parse(userString).user.name}
+              </Link>
+            </li>
+            <li className="auth-nav">
+              <button
+                onClick={() => {
+                  localStorage.removeItem("userReact");
+                  navigate("/login");
+                }}
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        )}
       </ul>
     </div>
   );

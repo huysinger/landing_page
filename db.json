@@ -1,0 +1,107 @@
+{
+  "users": [
+    {
+      "email": "alanriven@gmail.com",
+      "password": "$2a$10$GByRbXSuOd..6HngaPCkquwrj3W7uPm/N6bZRrwocVV1o0/qsQU7K",
+      "name": "huysinger",
+      "id": 4
+    },
+    {
+      "email": "huy123@gmail.com",
+      "password": "$2a$10$FYa1XqI2t1mUjXSVHHbm9.t0eXgMiM5PLp5nJAfeHb4Fg.mVGE23e",
+      "name": "huy123",
+      "id": 5
+    },
+    {
+      "email": "huy1234@gmail.com",
+      "password": "$2a$10$.2RuMb27/KyXkkAcbOMPDuSAnU1/mCXO.8FkXju7ECmOW7drDNUdu",
+      "name": "huy1234",
+      "id": 6
+    },
+    {
+      "email": "huydeptrai@gmail.com",
+      "password": "$2a$10$pY..TZgPplGLlwEeosvnf.T8F6m7nmhpRwHsiJ/7s1.vTEtaO/rBO",
+      "name": "huydeptrai",
+      "id": 7
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "name": "Iphone 7",
+      "price": "2.000.000",
+      "category": "Iphone",
+      "url": "https://iphonebinhphuoc.vn/wp-content/uploads/2021/01/IPHONE-7-SILVER.jpg",
+      "description": "iPhone 7 chính là cái tên đang gây sốt nhất trên sân chơi công nghệ toàn cầu thời gian gần đây. Và còn thú vị hơn nữa khi mà mặc dù chỉ mới ra mắt được hơn 2 tuần nhưng hiện tại bạn đã có thể sở hữu ngay chiếc bom tấn này tại các showroom của Di Động Thông Minh với mức giá tốt nhất trên cả nước thời điểm hiện tại. Dưới đây là bài viết tổng quan về chiếc iPhone 7 đang cực kì hot này.",
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "name": "Iphone 6",
+      "price": "1.000.000",
+      "category": "Iphone",
+      "url": "https://static.chotot.com/storage/chotot-kinhnghiem/c2c/2020/07/iphone-6s-plus-ra-mat-nam-nao-1.jpg",
+      "description": "iPhone 6S Plus là chiếc smartphone được thiết kế bởi Apple Inc và được giới thiệu vào 9 tháng 9 năm 2015 tại Bill Graham Civic Auditorium ở San Francisco bởi Giám đốc điều hành Tim Cook. "
+    },
+    {
+      "id": 7,
+      "name": "Samsung Galaxy S23 Ultra 256GB",
+      "price": "25.000.000",
+      "category": "Samsung",
+      "url": "https://cdn2.cellphones.com.vn/x/media/catalog/product/s/2/s23-ultra-xanh.png",
+      "description": "iPhone 6S Plus là chiếc smartphone được thiết kế bởi Apple Inc và được giới thiệu vào 9 tháng 9 năm 2015 tại Bill Graham Civic Auditorium ở San Francisco bởi Giám đốc điều hành Tim Cook. "
+    },
+    {
+      "id": 8,
+      "name": "Iphone X",
+      "price": "9.999.900",
+      "category": "Iphone",
+      "url": "https://www-konga-com-res.cloudinary.com/w_800,f_auto,fl_lossy,dpr_1.0,q_auto/media/catalog/product/L/Y/140063_1535866407.jpg",
+      "description": "The iPhone X display has rounded corners that follow a beautiful curved design, and these corners are within a standard rectangle. When measured as a standard rectangular shape, the screen is 5.85 inches diagonally (actual viewable area is less)."
+    },
+    {
+      "name": "Google Pixel 6",
+      "description": "Khi nhắc đến những chiếc smartphone chạy Android One thì chúng ta sẽ nghĩ ngay đến chiếc Google Pixel 6 lừng danh. Mới đây đã có những thông tin về thế hệ Pixel mới nhất là Google Pixel 6. Cùng nhau tham khảo về tổng hợp những thông tin nghe đồn về chiếc Google Pixel 6 này nhé.",
+      "category": "Google",
+      "price": "10.000.000",
+      "url": "https://cdn.tgdd.vn/Products/Images/42/233009/google-pixel-6-600x600.jpg",
+      "id": 10
+    },
+    {
+      "name": "Xiaomi 13 Ultra",
+      "description": "Xiaomi 13 Ultra hiện là mẫu flagship có hệ thống camera chụp ảnh tốt nhất trên thế giới tại thời điểm hiện tại. Với ống kính Leica Summicron, hệ thống máy ảnh này được phát triển với sự hợp tác của Leica cùng cảm biến Sony 1 inch từ mẫu Pro, Xiaomi 13 Ultra có thể mang lại một số cải tiến trong lĩnh vực chụp ảnh macro.",
+      "category": "Xiaomi",
+      "price": "20.000.000",
+      "url": "https://mobileworld.com.vn/uploads/product/Xiaomi_13_series/thumbs/xiaomi_13_ultra_den.webp",
+      "id": 11
+    },
+    {
+      "name": "iPhone 14 Pro Max",
+      "description": "iPhone 14 Pro Max một siêu phẩm trong giới smartphone được nhà Táo tung ra thị trường vào tháng 09/2022. Máy trang bị con chip Apple A16 Bionic vô cùng mạnh mẽ, đi kèm theo đó là thiết kế hình màn hình mới, hứa hẹn mang lại những trải nghiệm đầy mới mẻ cho người dùng iPhone.",
+      "category": "Iphone",
+      "price": "30.000.000",
+      "url": "https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-purple-1.jpg",
+      "id": 12
+    }
+  ],
+  "posts": [
+    {
+      "title": "Apple phát hành iOS 17 và iPadOS 17 beta 5, bạn đã cập nhật chưa?",
+      "content1": "Apple hôm nay đã tung ra bản beta thứ năm của các bản cập nhật iOS 17 và iPadOS 17 sắp tới cho các nhà phát triển nhằm mục đích thử nghiệm. Được biết, phần mềm mới xuất hiện sau khoảng 2 tuần kể từ khi Apple tung ra bản iOS/iPadOS 17 beta 4.",
+      "content2": "Hiện tại, các nhà phát triển đã đăng ký có thể chọn tham gia các bản thử nghiệm mới bằng cách mở ứng dụng Cài đặt, chuyển đến phần Cập nhật phần mềm, nhấn vào tùy chọn Cập nhật Beta và bật iOS 17 Beta dành cho nhà phát triển. Lưu ý rằng, để tải xuống iOS 17 và iPadOS 17 beta 5 thì bạn cần sử dụng Apple ID được liên kết với tài khoản nhà phát triển.",
+      "content3": "Dù không phải là một bản cập nhật lớn nhưng iOS 17 vẫn mang đến khá nhiều tính năng đáng chú ý cho người dùng. Một trong số đó là posters, tính năng biến liên hệ thành hình ảnh hiển thị toàn màn hình trên iPhone của người nhận khi bạn gọi cho họ.",
+      "category": "Công nghệ",
+      "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/General-iOS-17-Feature-Orange-Pu.jpeg",
+      "id": 1
+    },
+    {
+      "title": "Apple phát hành iOS 17 và iPadOS 17 beta 5, bạn đã cập nhật chưa?",
+      "content1": "Apple hôm nay đã tung ra bản beta thứ năm của các bản cập nhật iOS 17 và iPadOS 17 sắp tới cho các nhà phát triển nhằm mục đích thử nghiệm. Được biết, phần mềm mới xuất hiện sau khoảng 2 tuần kể từ khi Apple tung ra bản iOS/iPadOS 17 beta 4.",
+      "content2": "Hiện tại, các nhà phát triển đã đăng ký có thể chọn tham gia các bản thử nghiệm mới bằng cách mở ứng dụng Cài đặt, chuyển đến phần Cập nhật phần mềm, nhấn vào tùy chọn Cập nhật Beta và bật iOS 17 Beta dành cho nhà phát triển. Lưu ý rằng, để tải xuống iOS 17 và iPadOS 17 beta 5 thì bạn cần sử dụng Apple ID được liên kết với tài khoản nhà phát triển.",
+      "content3": "Dù không phải là một bản cập nhật lớn nhưng iOS 17 vẫn mang đến khá nhiều tính năng đáng chú ý cho người dùng. Một trong số đó là posters, tính năng biến liên hệ thành hình ảnh hiển thị toàn màn hình trên iPhone của người nhận khi bạn gọi cho họ.",
+      "category": "Công nghệ",
+      "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/General-iOS-17-Feature-Orange-Pu.jpeg",
+      "id": 2
+    }
+  ]
+}

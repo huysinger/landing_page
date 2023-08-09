@@ -1,11 +1,19 @@
 import Header from "../../components/headers/Header";
 import "./AboutPage.css";
 import { menuHeader } from "../../components/headers/Header";
+import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
-const AboutPage = () => {
+const AboutPage = (userInfo) => {
   return (
     <div>
-      <Header menu={menuHeader} />
+      <Helmet>
+        <title>About Us</title>
+      </Helmet>
+      <Header
+        menu={menuHeader}
+        userInfo={userInfo}
+      />
       <div className="about-body">
         <img
           src="https://media.loveitopcdn.com/3807/dong-phuc-cellphones-01.jpg"
@@ -17,15 +25,15 @@ const AboutPage = () => {
         </div>
         <div className="about-description">
           <p style={{ textAlign: "center" }}>
-            "Toylandia" - Your Ultimate Toy Shop!
+            CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng!
           </p>{" "}
           <p>
-            Welcome to Toylandia, where imagination knows no bounds and dreams
+            Welcome to CellphoneS, where imagination knows no bounds and dreams
             come to life! We are your go-to destination for all things fun and
             play. Step into a world of enchanting toys that will delight
             children of all ages and ignite the inner child in adults.
           </p>{" "}
-          At Toylandia, we take great pride in curating a diverse and
+          At CellphoneS, we take great pride in curating a diverse and
           captivating collection of toys from around the globe. Whether you're
           searching for classic toys that have stood the test of time or the
           latest innovative playthings, we have it all. From cuddly plushies
@@ -51,7 +59,7 @@ const AboutPage = () => {
           discovery.
           <p>
             {" "}
-            Toylandia is more than just a toy shop; it's a place where memories
+            CellphoneS is more than just a toy shop; it's a place where memories
             are made and cherished for a lifetime. Come, be a part of our
             vibrant community, and let your imagination run wild! Experience the
             joy of play at Toylandia - where happiness comes wrapped in toys!

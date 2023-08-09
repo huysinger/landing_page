@@ -1,0 +1,31 @@
+.cart-body {
+  padding: var(--bodypadding);
+}
+.cart-body > h1 {
+  font-size: 24px;
+  padding: 1%;
+  font-weight: 500;
+}
+.container-cart {
+  display: flex;
+  flex-direction: column;
+}
+.product-cart {
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 0.3rem 0.5rem;
+  align-items: center;
+}
+.product-cart > img {
+  max-width: 3rem;
+  height: auto;
+  margin: 0.875rem;
+}
+.product-cart > h3 {
+  color: #d70018;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 20px;
+  margin: 0.3rem;
+  flex: 1;
+}

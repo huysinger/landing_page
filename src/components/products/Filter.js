@@ -1,116 +1,69 @@
-import React from "react";
-import { product_list } from "./Products";
-import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "./Filter.css";
+import { useNavigate } from "react-router-dom";
+import useLocalStorageState from "use-local-storage-state";
+import { apiGetAllProduct } from "../../services/api/products";
 
 const Filter = () => {
-  const [productList, setProductList] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState();
+  const navigate = useNavigate();
+  const [allProducts, setAllProduct] = useState(null);
+  const [cart, setCart] = useLocalStorageState("cart", {});
+  const getAllProduct = async () => {
+    const data = await apiGetAllProduct();
+    setAllProduct(data?.data);
+  };
+
+  const addToCart = (product) => {
+    product.quantity = 1;
+
+    setCart((prevCart) => ({
+      ...prevCart,
+      [product.id]: product,
+    }));
+  };
+
   useEffect(() => {
-    setProductList(product_list);
+    getAllProduct();
   }, []);
-  function getFilteredList() {
-    // Avoid filter when selectedCategory is null
-    if (!selectedCategory) {
-      return productList;
-    }
-    return productList.filter((item) => item.category === selectedCategory);
-  }
-  var filteredList = useMemo(getFilteredList, [selectedCategory, productList]);
-  function handleCategoryChange(event) {
-    setSelectedCategory(event.target.value);
-  }
-  const obj2 = [...new Set(product_list.map((obj) => obj.category))];
   return (
     <div>
-      <select
-        name="category-list"
-        id="category-list"
-        className="filter"
-        onChange={handleCategoryChange}
-      >
-        <option
-          value=""
-          className="filter-option"
-        >
-          Tất cả
-        </option>
-        {obj2.map((ele) => {
-          return (
-            <option
-              value={ele}
-              className="filter-option"
-            >
-              {ele}
-            </option>
-          );
-        })}
-        ;
-      </select>
-      <div className="products_flex">
-        {filteredList.map((obj, index) => {
-          return (
+      <div>
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {allProducts?.map((product) => (
             <div
-              className="product font-sans"
-              key={index}
+              key={product?.id}
+              className="relative bg-gray-200 p-4 rounded hover:bg-gray-500"
             >
-              <div className="img-wrap">
-                <Link to={`/product/${obj.id}`}>
-                  <img
-                    src={obj.url}
-                    alt="product img"
-                  />
-                </Link>
+              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 cursor-pointer">
+                <img
+                  onClick={() => navigate(`/product/${product?.id}`)}
+                  src={product?.url}
+                  alt={product?.url}
+                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                />
               </div>
-              <div className="product-info p-6">
-                <Link
-                  to={`/product/${obj.id}`}
-                  className="product-name text-lg font-semibold text-slate-900"
+              <div
+                onClick={() => navigate(`/product/${product?.id}`)}
+                className="mt-4 h-[50px] flex justify-between cursor-pointer"
+              >
+                <div>
+                  <h3 className="text-sm text-gray-700">{product?.name}</h3>
+                </div>
+                <p className="text-sm font-medium text-gray-900">
+                  {product?.price}
+                </p>
+              </div>
+              <div className="flex justify-end">
+                <button
+                  className="p-2 text-white bg-[#d70018] hover:bg-[#df3346] rounded"
+                  onClick={() => addToCart(product)}
                 >
-                  {obj.name}
-                </Link>
-                <div className="price text-lg font-semibold text-slate-500">
-                  {obj.price}
-                </div>
-                <div class="flex space-x-4 mb-6 text-sm font-medium">
-                  <div class="buy-add-btn flex space-x-4">
-                    <button
-                      class="buy-btn h-10 px-6 font-semibold rounded-md text-white"
-                      type="submit"
-                    >
-                      Mua ngay
-                    </button>
-                    <button
-                      class="add-cart-btn h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
-                      type="button"
-                    >
-                      Thêm giỏ hàng
-                    </button>
-                  </div>
-                  <button
-                    class="flex-none items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200"
-                    type="button"
-                    aria-label="Like"
-                  >
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                  Thêm vào giỏ hàng
+                </button>
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );

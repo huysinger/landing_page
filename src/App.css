@@ -10,6 +10,7 @@
   font-size: 100%;
 }
 .header {
+  z-index: 1;
   background-color: var(--maincolor);
   width: 100%;
   position: fixed;
@@ -24,20 +25,21 @@
   padding: 10px;
 }
 .header-nav {
-  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  padding: 0px 32px;
   font-weight: 500;
 }
 
-.header-nav:nth-child(5),
-.header-nav:nth-child(6) {
-  position: absolute;
+.nav-auth {
+  display: flex;
+  align-items: center;
 }
-.header-nav:nth-child(6) {
-  right: 147px;
+.auth-nav {
+  padding: 16px 32px;
+  font-weight: 500;
 }
-.header-nav:nth-child(5) {
-  right: 0px;
-}
-.header-nav:hover {
+.header-nav:hover,
+.auth-nav:hover {
   background-color: var(--mainhovercolor);
 }

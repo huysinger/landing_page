@@ -3,11 +3,35 @@ import { Link } from "react-router-dom";
 import Products from "../../components/products/Products";
 import "./HomePage.css";
 import { menuHeader } from "../../components/headers/Header";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useState(undefined);
+  const getUser = () => {
+    const user = localStorage.getItem("userReact");
+    if (user) {
+      const userJson = JSON.parse(user);
+      setUserInfo(userJson);
+    } else {
+      navigate("/login");
+    }
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
+
   return (
     <div className="home-page">
-      <Header menu={menuHeader} />
+      <Helmet>
+        <title>CellphoneS</title>
+      </Helmet>
+      <Header
+        userInfo={userInfo}
+        menu={menuHeader}
+      />
       <div className="page-body">
         <Link to={"/product"}>
           <img
