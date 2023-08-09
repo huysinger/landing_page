@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Quantifier } from "./Quantifier";
 import "./Cart.css";
+import { MoneyFormatter } from "../formatter/Formatter";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ const Cart = () => {
       accumulator + parseInt(product.price) * 1000000 * product.quantity,
     0
   );
+
   return (
     <section className="cart-body">
       <h1>Giỏ hàng</h1>
@@ -65,15 +67,22 @@ const Cart = () => {
               {product.name}
             </h3>
             <Quantifier
+              productId={product?.id}
               removeProductCallback={() => handleRemoveProduct(product.id)}
               handleUpdateQuantity={handleUpdateQuantity}
             />
-            <p>{parseInt(product.price) * 1000000 * product.quantity}₫</p>
+            <p>
+              {MoneyFormatter.format(
+                parseInt(product.price) * 1000000 * product.quantity
+              )}
+            </p>
           </div>
         ))}
       </div>
       <div className="text-xl flex flex-col items-end">
-        <p className="font-medium my-4">Tổng thanh toán: {totalPrice}₫</p>
+        <p className="font-medium my-4">
+          Tổng thanh toán: {MoneyFormatter.format(totalPrice)}
+        </p>
         <button className="font-medium px-4 py-2 bg-[#d70018] hover:bg-[#df3346] rounded text-white">
           Đặt hàng
         </button>

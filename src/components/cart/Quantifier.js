@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { set } from "react-hook-form";
 
 export const Quantifier = ({
   removeProductCallback,
@@ -35,8 +34,6 @@ export const Quantifier = ({
       </button>
       <input
         type="number"
-        step="1"
-        max=""
         value={value}
         onChange={(e) => {
           setValue(parseInt(e.target.value));

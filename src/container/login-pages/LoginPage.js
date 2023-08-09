@@ -1,6 +1,7 @@
 import LoginForm from "../../components/login/Login";
 import Header from "../../components/headers/Header";
 import "./LoginPage.css";
+import { Helmet } from "react-helmet";
 
 const LoginPage = () => {
   const menuHeader = [
@@ -15,6 +16,9 @@ const LoginPage = () => {
   ];
   return (
     <div>
+      <Helmet>
+        <title>Đăng Nhập</title>
+      </Helmet>
       <Header menu={menuHeader} />
       <div className="login-body">
         <LoginForm />

@@ -13,11 +13,11 @@ export const menuHeader = [
     url: "/product",
   },
   {
-    title: "Phân loại",
+    title: "Phân Loại",
     url: "/category",
   },
   {
-    title: "Tin tức",
+    title: "Tin Tức",
     url: "/post",
   },
   {

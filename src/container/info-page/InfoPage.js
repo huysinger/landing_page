@@ -2,6 +2,7 @@ import Header, { menuHeader } from "../../components/headers/Header";
 import { apiReadDetailUser } from "../../services/api/users";
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const InfoPage = (userInfo) => {
   const { id } = useParams();
@@ -25,6 +26,9 @@ const InfoPage = (userInfo) => {
 
   return (
     <div>
+      <Helmet>
+        <title>{detailUser?.name}</title>
+      </Helmet>
       <Header
         menu={menuHeader}
         userInfo={userInfo}

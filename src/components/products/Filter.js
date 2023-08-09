@@ -32,7 +32,7 @@ const Filter = () => {
           {allProducts?.map((product) => (
             <div
               key={product?.id}
-              className="relative bg-gray-200 p-4 rounded hover:bg-gray-500"
+              className="relative bg-gray-200 p-4 rounded hover:bg-gray-400"
             >
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 cursor-pointer">
                 <img

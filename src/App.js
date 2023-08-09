@@ -11,6 +11,9 @@ import CategoryPage from "./container/category-pages/CategoryPage";
 import InfoPage from "./container/info-page/InfoPage";
 import CartPage from "./container/cart-pages/CartPage";
 import InfoForm from "./container/info-page/InfoForm";
+import PostPage from "./container/post-pages/PostPage";
+import PostDetail from "./container/post-pages/PostDetail";
+import PostForm from "./container/post-pages/PostForm";
 
 function App() {
   return (
@@ -54,6 +57,10 @@ function App() {
               path={`cart`}
               element={<CartPage />}
             />
+            <Route
+              path="post"
+              element={<PostPage />}
+            />
           </Route>
           <Route path="/product/">
             <Route
@@ -71,6 +78,24 @@ function App() {
             <Route
               path="add"
               element={<ProductForm />}
+            />
+          </Route>
+          <Route path="/post/">
+            <Route
+              index
+              element={<PostPage />}
+            />
+            <Route
+              path={`:id`}
+              element={<PostDetail />}
+            />
+            <Route
+              path="edit/:id"
+              element={<PostForm />}
+            />
+            <Route
+              path="add"
+              element={<PostForm />}
             />
           </Route>
         </Routes>

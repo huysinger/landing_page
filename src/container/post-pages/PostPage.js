@@ -1,0 +1,75 @@
+import Header, { menuHeader } from "../../components/headers/Header";
+import { Helmet } from "react-helmet";
+import { apiGetAllPost } from "../../services/api/posts";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import "./PostPage.css";
+import { AiOutlineHome } from "react-icons/ai";
+
+const PostPage = (userInfo) => {
+  const navigate = useNavigate();
+  const [allPost, setAllPost] = useState(null);
+  const getAllPost = async () => {
+    const data = await apiGetAllPost();
+    setAllPost(data?.data);
+  };
+  const setOfCategory = [...new Set(allPost?.map((post) => post.category))];
+  useEffect(() => {
+    getAllPost();
+  }, []);
+
+  return (
+    <div>
+      <Helmet>
+        <title>Tin Tức</title>
+      </Helmet>
+      <Header
+        menu={menuHeader}
+        userInfo={userInfo}
+      />
+      <div className="post-body flex">
+        <div className="left-sidebar w-1/6 mt-8 border border-solid border-[#ccc] rounded-xl">
+          <div>
+            <button className="items-center flex m-4 group relative border-gray-200 border border-solid p-2 rounded hover:bg-gray-200 focus:bg-gray-200 hover:cursor-pointer">
+              <AiOutlineHome className="mr-2" />
+              Tất Cả
+            </button>
+            {setOfCategory?.map((val, index) => (
+              <button
+                key={index}
+                className="items-center flex m-4 group relative border-gray-200 border border-solid p-2 rounded hover:bg-gray-200 focus:bg-gray-200 hover:cursor-pointer"
+                value={val}
+              >
+                {val}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="right-content pl-10">
+          {allPost?.toReversed().map((post) => (
+            <div className="flex my-8 rounded-xl border-solid border border-[#ccc]">
+              <img
+                onClick={() => navigate(`/post/${post?.id}`)}
+                src={post?.url}
+                alt={post?.url}
+                className="aspect-auto rounded-xl lg:aspect-none lg:h-48 cursor-pointer"
+              />
+              <div className="flex flex-col justify-between">
+                <h1
+                  onClick={() => navigate(`/post/${post?.id}`)}
+                  className="mx-4 my-2 text-2xl font-medium text-[#505050] hover:text-[#d70018] cursor-pointer"
+                >
+                  {post?.title}
+                </h1>
+                <p className="m-4 self-end p-2 rounded-xl bg-[#f7f7f7] hover:text-black text-[#505050] cursor-pointer">
+                  {post?.category}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+export default PostPage;
