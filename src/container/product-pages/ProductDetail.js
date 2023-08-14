@@ -5,19 +5,19 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   apiReadDetailProduct,
   apiRemoveProduct,
-  apiEditProduct,
 } from "../../services/api/products";
 import { Helmet } from "react-helmet";
 import { AiOutlineHeart } from "react-icons/ai";
 import useLocalStorageState from "use-local-storage-state";
+import axios from "axios";
 
 const ProductDetail = (userInfo) => {
   const [likes, setLikes] = useState(0);
+
+  const { id } = useParams();
   const handleLike = () => {
     setLikes(likes + 1);
   };
-
-  const { id } = useParams();
   const navigate = useNavigate();
   const [detailProduct, setDetailProduct] = useState(null);
   const [cart, setCart] = useLocalStorageState("cart", {});

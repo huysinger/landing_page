@@ -6,7 +6,6 @@ export const Quantifier = ({
   productId,
 }) => {
   const [value, setValue] = useState(1);
-
   const reduce = () => {
     handleUpdateQuantity(productId, "decrease");
 

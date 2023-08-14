@@ -6,6 +6,7 @@ import { menuHeader } from "../../components/headers/Header";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import LatestPosts from "../../components/latest-posts/LatestPosts";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -53,7 +54,9 @@ const HomePage = () => {
             tháng.
           </p>
         </div>
-        <h1 className="best-seller">Sản phẩm</h1>
+        <LatestPosts />
+        <h1 className="best-seller">Sản phẩm hot🔥</h1>
+
         <Products />
       </div>
     </div>

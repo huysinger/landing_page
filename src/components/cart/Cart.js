@@ -1,5 +1,5 @@
 import useLocalStorageState from "use-local-storage-state";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Quantifier } from "./Quantifier";
 import "./Cart.css";
@@ -8,6 +8,7 @@ import { MoneyFormatter } from "../formatter/Formatter";
 const Cart = () => {
   const navigate = useNavigate();
   const [cart, setCart] = useLocalStorageState("cart", {});
+  const [order, setOrder] = useState([]);
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,6 +20,13 @@ const Cart = () => {
       return updatedCart;
     });
   };
+  useEffect(() => {
+    const storedData = localStorage.getItem("cart");
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      setOrder(parsedData);
+    }
+  }, []);
   const handleUpdateQuantity = (productId, state) => {
     setCart((prevCart) => {
       const updatedCart = { ...prevCart };

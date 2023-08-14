@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { apiGetAllPost } from "../../services/api/posts";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./PostPage.css";
 import { AiOutlineHome } from "react-icons/ai";
 
 const PostPage = (userInfo) => {
@@ -27,7 +26,13 @@ const PostPage = (userInfo) => {
         menu={menuHeader}
         userInfo={userInfo}
       />
-      <div className="post-body flex">
+      <button
+        onClick={() => navigate("/post/add")}
+        className="mt-20 ml-40 px-4 py-2 rounded bg-[#d70018] text-white"
+      >
+        Add
+      </button>
+      <div className="px-[10%] flex">
         <div className="left-sidebar w-1/6 mt-8 border border-solid border-[#ccc] rounded-xl">
           <div>
             <button className="items-center flex m-4 group relative border-gray-200 border border-solid p-2 rounded hover:bg-gray-200 focus:bg-gray-200 hover:cursor-pointer">
@@ -46,8 +51,11 @@ const PostPage = (userInfo) => {
           </div>
         </div>
         <div className="right-content pl-10">
-          {allPost?.toReversed().map((post) => (
-            <div className="flex my-8 rounded-xl border-solid border border-[#ccc]">
+          {allPost?.toReversed().map((post, index) => (
+            <div
+              key={index}
+              className="flex my-8 rounded-xl border-solid border border-[#ccc]"
+            >
               <img
                 onClick={() => navigate(`/post/${post?.id}`)}
                 src={post?.url}

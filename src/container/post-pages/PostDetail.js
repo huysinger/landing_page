@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { apiReadDetailPost, apiRemovePost } from "../../services/api/posts";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import "./PostPage.css";
 const PostDetail = (userInfo) => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -18,9 +18,17 @@ const PostDetail = (userInfo) => {
       navigate("/post");
     }
   };
+  const onHandleDeletePost = async (id) => {
+    try {
+      await apiRemovePost(id);
+      navigate("/post");
+    } catch (error) {
+      console.log("Error");
+    }
+  };
   useEffect(() => {
     readDetailPost();
-  }, []);
+  }, detailPost);
 
   return (
     <div>
@@ -32,6 +40,20 @@ const PostDetail = (userInfo) => {
         userInfo={userInfo}
       />
       <div className="post-body">
+        <div>
+          <button
+            onClick={() => navigate(`/post/edit/${detailPost?.id}`)}
+            className="ml-10 mt-4 px-4 py-2 rounded bg-yellow-500 text-white"
+          >
+            Edit
+          </button>
+          <button
+            onClick={() => onHandleDeletePost(detailPost?.id)}
+            className="ml-10 mt-4 px-4 py-2 rounded bg-[#d70018] text-white"
+          >
+            Delete
+          </button>
+        </div>
         <div className="flex flex-col m-8 rounded-xl border-2 border-solid border-[#ccc]">
           <div className="mx-12 my-6">
             <p className=" p-2 rounded-xl bg-[#f7f7f7] hover:text-black text-[#505050] cursor-pointer">

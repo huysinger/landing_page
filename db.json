@@ -20,21 +20,18 @@
     },
     {
       "email": "huydeptrai@gmail.com",
-      "password": "$2a$10$pY..TZgPplGLlwEeosvnf.T8F6m7nmhpRwHsiJ/7s1.vTEtaO/rBO",
+      "password": "$2a$10$WEbDPzsF86UrrtH7VAM/8OXA.vurh.PIS9vFdAfLQYjsvD8nqdFrK",
       "name": "huydeptrai",
       "id": 7
+    },
+    {
+      "email": "huynguyen@gmail.com",
+      "password": "$2a$10$OEXOmQ1OCLYyYBSkYeZVNuKNYvAICZNZhgU48CdeR4Px4iOnDbAiK",
+      "name": "Huy Nguyen",
+      "id": 8
     }
   ],
   "products": [
-    {
-      "id": 3,
-      "name": "Iphone 7",
-      "price": "2.000.000",
-      "category": "Iphone",
-      "url": "https://iphonebinhphuoc.vn/wp-content/uploads/2021/01/IPHONE-7-SILVER.jpg",
-      "description": "iPhone 7 chính là cái tên đang gây sốt nhất trên sân chơi công nghệ toàn cầu thời gian gần đây. Và còn thú vị hơn nữa khi mà mặc dù chỉ mới ra mắt được hơn 2 tuần nhưng hiện tại bạn đã có thể sở hữu ngay chiếc bom tấn này tại các showroom của Di Động Thông Minh với mức giá tốt nhất trên cả nước thời điểm hiện tại. Dưới đây là bài viết tổng quan về chiếc iPhone 7 đang cực kì hot này.",
-      "likes": 0
-    },
     {
       "id": 6,
       "name": "Iphone 6",
@@ -81,7 +78,8 @@
       "category": "Iphone",
       "price": "30.000.000",
       "url": "https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-purple-1.jpg",
-      "id": 12
+      "id": 12,
+      "order": ""
     }
   ],
   "posts": [
@@ -91,7 +89,7 @@
       "content2": "Hiện tại, các nhà phát triển đã đăng ký có thể chọn tham gia các bản thử nghiệm mới bằng cách mở ứng dụng Cài đặt, chuyển đến phần Cập nhật phần mềm, nhấn vào tùy chọn Cập nhật Beta và bật iOS 17 Beta dành cho nhà phát triển. Lưu ý rằng, để tải xuống iOS 17 và iPadOS 17 beta 5 thì bạn cần sử dụng Apple ID được liên kết với tài khoản nhà phát triển.",
       "content3": "Dù không phải là một bản cập nhật lớn nhưng iOS 17 vẫn mang đến khá nhiều tính năng đáng chú ý cho người dùng. Một trong số đó là posters, tính năng biến liên hệ thành hình ảnh hiển thị toàn màn hình trên iPhone của người nhận khi bạn gọi cho họ.",
       "category": "Công nghệ",
-      "date": "09-08-2023",
+      "date": "9/8/2023",
       "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/General-iOS-17-Feature-Orange-Pu.jpeg",
       "id": 1
     },
@@ -101,7 +99,7 @@
       "content2": "Hôm nay, biến thể SM-A055F của Galaxy A05 vừa được thử nghiệm hiệu năng trên Geekbench. Nhờ đó mà chúng ta có được một vài thông tin cấu hình của điện thoại này.",
       "content3": "Cụ thể, dữ liệu từ Geekbench cho thấy Galay A05 sẽ được cung cấp sức mạnh đến từ con chip MediaTek Helio G85 (MT6769V/CZ). Đây là một bản nâng cấp khá tốt so với Galaxy A04 sử dụng SoC Helio P35. Dù cả hai đều là chip 12nm, nhưng G85 có hai lõi Cortex-A75 (2.0GHz) và sáu lõi A55 (1.8GHz), so với tám lõi Cortex-A53 trên P35. Điều này giúp Galaxy A05 có hiệu suất đơn và đa lõi tốt hơn thế hệ trước. Chưa hết, Mali-G52 MC2 nhanh hơn gấp đôi so với GPU PowerVR GE8320.",
       "category": "Công nghệ",
-      "date": "09-08-2023",
+      "date": "9/8/2023",
       "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/Galaxy-A05-Geekbench-cover.jpeg",
       "id": 2
     },
@@ -111,9 +109,39 @@
       "content2": "Hiện tại, bản beta Project L đã được Riot mở và có sẵn 7 tướng để người chơi vào trải nghiệm. Tuy người chơi có hơi chút thất vọng khi không thể đưa cùng lúc tất cả 164 vị tướng LMHT hiện hành vào Project L, nhưng họ cũng rất phấn khởi trải nghiệm tựa game với những phong cách chiến đấu đối kháng vô cùng đặc sắc của nhóm tướng có sẵn này. Dưới đây là thông tin về 7 tướng được cập nhật trong phiên bản beta lần này.",
       "content3": "Vị tướng này là kiếm sĩ bậc thầy, người sở hữu nhiều thứ công cụ đa dụng trong hầu hết các tình huống và luôn tạo ra những pha xử lý xuất thần, mãn nhãn cả ở phương diện cá nhân lẫn kết hợp đồng đội. Yasuo cũng sở hữu Tường Gió đáng tin cậy để ngăn chặn những kỹ năng định hướng và cả cú lướt cho ai thích lôi chơi uyển chuyển, hoa mỹ.",
       "category": "Games",
-      "date": "09-08-2023",
+      "date": "9/8/2023",
       "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/project-l-0.jpg",
       "id": 3
+    },
+    {
+      "title": "Galaxy S24 Ultra sẽ nhận được nâng cấp khủng về camera",
+      "category": "Công nghệ",
+      "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/Galaxy-S24-Ultra-camera.jpeg",
+      "content1": "Mặc dù phải còn khá lâu nữa Samsung mới ra mắt loạt flagship Galaxy S24 mới nhưng thời gian qua, thông tin về các điện thoại này đã liên tục được chia sẻ trên các trang mạng.",
+      "content2": "Dự kiến, dòng sản phẩm này sẽ tiếp tục có 3 model là Galaxy S24, S24+ và S24 Ultra. Hôm nay, một nguồn uy tín vừa chia sẻ thông tin máy ảnh của biến thể “Ultra” cao cấp nhất.",
+      "content3": "Cụ thể, leaker đáng tin cậy Ice Universe vừa tiết lộ thông tin cho biết Galaxy S24 Ultra sẽ có máy ảnh tele được nâng cấp. Nó được cho là sẽ sử dụng camera tele 50MP với zoom quang học 3x. Đó là độ phân giải gấp năm lần so với camera tele 3x trên Galaxy S23 Ultra. Ngoài ra, máy ảnh mới của S24 Ultra cũng được cho là có kích thước cảm biến lớn hơn, hứa hẹn mang tới những bức ảnh thu phóng chất lượng hơn cho người dùng.",
+      "id": 4,
+      "date": "9/8/2023"
+    },
+    {
+      "title": "Hé lộ các biến thể màu sắc, RAM và ROM của Galaxy Tab S9 FE",
+      "content1": "Samsung hiện đang làm việc trên các tablet tầm trung Galaxy Tab S9 FE series để sớm giới thiệu với người dùng trong thời gian tới.",
+      "content2": "Hôm nay, nguồn tin đến từ trang 91mobiles vừa độc quyền chia sẻ cho chúng ta thông tin về các biến thể màu sắc, RAM và ROM của model Tab S9 FE tiêu chuẩn.",
+      "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/Samsung-Galaxy-Tab-S9-FE-5G-gia-cover.jpeg",
+      "content3": "Theo hình ảnh rò rỉ mới nhất, mẫu Galaxy Tab S9 FE 5G sẽ có giá 65,000 INR (khoảng 18.65 triệu đồng) tại Ấn Độ. Giá này sẽ dành cho cấu hình 6GB RAM + 128GB. Mặt khác, biến thể Galaxy Tab S9 FE Wi-Fi với RAM 6GB và bộ nhớ trong 128GB sẽ có giá 63,000 (khoảng 18 triệu đồng). Ngoài cấu hình 6GB/128GB, máy tính bảng này cũng có thể được giới thiệu với nhiều tùy chọn RAM và dung lượng lưu trữ hơn. Ngoài ra, trang Mysmartprice còn cho biết Tab S9 FE sẽ ra mắt với các tùy chọn màu Bạc, Xanh lục nhạt và Xám.",
+      "category": "Công nghệ",
+      "date": "10/8/2023",
+      "id": 5
+    },
+    {
+      "title": "Rockstar tung siêu phẩm Red Dead Redemption lên Nintendo Switch và PS4!",
+      "content1": "Rockstar tung siêu phẩm Red Dead Redemption lên Nintendo Switch và PS4, nhưng bị fan phản đối mãnh liệt",
+      "content2": "Red Dead Redemption là một trong những trò chơi hay nhất mọi thời đại, được phát hành lần đầu vào năm 2010 và chỉ có mặt trên 2 hệ máy cũ là PlayStation 3, Xbox 360. Giờ đây, trò chơi sẽ nhanh chóng được ra mắt trên PlayStation 4 và Nintendo Switch nhờ sự giúp đỡ từ nhà phát triển Double Eleven Studios.",
+      "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/red-dead-redemption-1.jpg",
+      "content3": "Theo Rockstar, đây không phải là một bản remake hay remaster mà là một bản chuyển đổi được bổ sung thêm nhiều ngôn ngữ hỗ trợ mới như tiếng Trung, Hàn, Ba Lan,... Trò chơi sẽ có giá 49.99 USD trên Nintendo Switch eShop và PlayStation Store, còn phiên bản vật lý sẽ được phát hành trễ hơn vào ngày 13/10. Tuy nhiên các fan chỉ trích Rockstar là đã không update thêm bất kỳ tính năng mới nào mà lại đặt giá quá cao cho một trò chơi đã 13 năm tuổi. Sếp Rockstar thì lại nói rằng đây là giá \"phù hợp thị trường\" - hay nói cách khác là kiểu gì cũng có nguời mua.",
+      "category": "Games",
+      "date": "10/8/2023",
+      "id": 6
     }
   ]
 }
