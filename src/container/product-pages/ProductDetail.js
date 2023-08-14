@@ -5,18 +5,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   apiReadDetailProduct,
   apiRemoveProduct,
+  apiEditProduct,
 } from "../../services/api/products";
 import { Helmet } from "react-helmet";
 import { AiOutlineHeart } from "react-icons/ai";
 import useLocalStorageState from "use-local-storage-state";
-import axios from "axios";
+import { MoneyFormatter } from "../../components/formatter/Formatter";
 
 const ProductDetail = (userInfo) => {
-  const [likes, setLikes] = useState(0);
-
   const { id } = useParams();
-  const handleLike = () => {
-    setLikes(likes + 1);
+  const HandleLike = async (data) => {
+    await apiEditProduct({ ...data, likes: data.likes + 1 });
+    readDetailProduct();
   };
   const navigate = useNavigate();
   const [detailProduct, setDetailProduct] = useState(null);
@@ -80,40 +80,7 @@ const ProductDetail = (userInfo) => {
                 <div className="flex mb-4">
                   <span className="flex items-center">
                     <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-4 h-4 text-[#d70018]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-4 h-4 text-[#d70018]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <svg
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-4 h-4 text-[#d70018]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    <svg
-                      fill="currentColor"
+                      fill="none"
                       stroke="currentColor"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -134,7 +101,40 @@ const ProductDetail = (userInfo) => {
                     >
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
-                    <span className="text-gray-600 ml-3">4 Reviews</span>
+                    <svg
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      className="w-4 h-4 text-[#d70018]"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <svg
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      className="w-4 h-4 text-[#d70018]"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <svg
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      className="w-4 h-4 text-[#d70018]"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <span className="text-gray-600 ml-3">0 Reviews</span>
                   </span>
                 </div>
                 <p className="leading-relaxed">{detailProduct?.description}</p>
@@ -170,14 +170,14 @@ const ProductDetail = (userInfo) => {
                   <div className="flex items-center">
                     <AiOutlineHeart
                       className="text-3xl cursor-pointer"
-                      onClick={handleLike}
+                      onClick={() => HandleLike(detailProduct)}
                     />
-                    <span>{likes} likes</span>
+                    <span>{detailProduct?.likes} likes</span>
                   </div>
                 </div>
                 <div className="flex justify-between gap-4">
                   <span className="title-font font-medium text-2xl text-gray-900">
-                    {detailProduct?.price}₫
+                    {MoneyFormatter.format(detailProduct?.price)}
                   </span>
                   <button
                     onClick={() =>

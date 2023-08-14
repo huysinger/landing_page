@@ -33,34 +33,22 @@
   ],
   "products": [
     {
-      "id": 6,
-      "name": "Iphone 6",
-      "price": "1.000.000",
-      "category": "Iphone",
-      "url": "https://static.chotot.com/storage/chotot-kinhnghiem/c2c/2020/07/iphone-6s-plus-ra-mat-nam-nao-1.jpg",
-      "description": "iPhone 6S Plus là chiếc smartphone được thiết kế bởi Apple Inc và được giới thiệu vào 9 tháng 9 năm 2015 tại Bill Graham Civic Auditorium ở San Francisco bởi Giám đốc điều hành Tim Cook. "
-    },
-    {
-      "id": 7,
-      "name": "Samsung Galaxy S23 Ultra 256GB",
-      "price": "25.000.000",
-      "category": "Samsung",
-      "url": "https://cdn2.cellphones.com.vn/x/media/catalog/product/s/2/s23-ultra-xanh.png",
-      "description": "iPhone 6S Plus là chiếc smartphone được thiết kế bởi Apple Inc và được giới thiệu vào 9 tháng 9 năm 2015 tại Bill Graham Civic Auditorium ở San Francisco bởi Giám đốc điều hành Tim Cook. "
-    },
-    {
       "id": 8,
-      "name": "Iphone X",
-      "price": "9.999.900",
+      "name": "iPhone 13",
+      "price": "16000000",
       "category": "Iphone",
-      "url": "https://www-konga-com-res.cloudinary.com/w_800,f_auto,fl_lossy,dpr_1.0,q_auto/media/catalog/product/L/Y/140063_1535866407.jpg",
-      "description": "The iPhone X display has rounded corners that follow a beautiful curved design, and these corners are within a standard rectangle. When measured as a standard rectangular shape, the screen is 5.85 inches diagonally (actual viewable area is less)."
+      "likes": 12,
+      "order": 0,
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/4/14_1_9_2_9.jpg",
+      "description": "Cuối năm 2020, bộ 4 iPhone 12 đã được ra mắt với nhiều cái tiến. Sau đó, mọi sự quan tâm lại đổ dồn vào sản phẩm tiếp theo – iPhone 13. Vậy iP 13 sẽ có những gì nổi bật, hãy tìm hiểu ngay sau đây nhé!"
     },
     {
       "name": "Google Pixel 6",
       "description": "Khi nhắc đến những chiếc smartphone chạy Android One thì chúng ta sẽ nghĩ ngay đến chiếc Google Pixel 6 lừng danh. Mới đây đã có những thông tin về thế hệ Pixel mới nhất là Google Pixel 6. Cùng nhau tham khảo về tổng hợp những thông tin nghe đồn về chiếc Google Pixel 6 này nhé.",
       "category": "Google",
-      "price": "10.000.000",
+      "price": 10000000,
+      "likes": 11,
+      "order": 0,
       "url": "https://cdn.tgdd.vn/Products/Images/42/233009/google-pixel-6-600x600.jpg",
       "id": 10
     },
@@ -68,7 +56,9 @@
       "name": "Xiaomi 13 Ultra",
       "description": "Xiaomi 13 Ultra hiện là mẫu flagship có hệ thống camera chụp ảnh tốt nhất trên thế giới tại thời điểm hiện tại. Với ống kính Leica Summicron, hệ thống máy ảnh này được phát triển với sự hợp tác của Leica cùng cảm biến Sony 1 inch từ mẫu Pro, Xiaomi 13 Ultra có thể mang lại một số cải tiến trong lĩnh vực chụp ảnh macro.",
       "category": "Xiaomi",
-      "price": "20.000.000",
+      "price": 20000000,
+      "likes": 10,
+      "order": 0,
       "url": "https://mobileworld.com.vn/uploads/product/Xiaomi_13_series/thumbs/xiaomi_13_ultra_den.webp",
       "id": 11
     },
@@ -76,10 +66,91 @@
       "name": "iPhone 14 Pro Max",
       "description": "iPhone 14 Pro Max một siêu phẩm trong giới smartphone được nhà Táo tung ra thị trường vào tháng 09/2022. Máy trang bị con chip Apple A16 Bionic vô cùng mạnh mẽ, đi kèm theo đó là thiết kế hình màn hình mới, hứa hẹn mang lại những trải nghiệm đầy mới mẻ cho người dùng iPhone.",
       "category": "Iphone",
-      "price": "30.000.000",
-      "url": "https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-purple-1.jpg",
+      "price": 30000000,
+      "likes": 9,
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/_/t_m_18.png",
       "id": 12,
-      "order": ""
+      "order": 0
+    },
+    {
+      "name": "Xiaomi Redmi Note 12 Pro 5G",
+      "description": "Xiaomi Redmi Note 12 Pro sở hữu cấu hình vượt trội gồm chip MediaTek Dimensity 1080, hệ thống ba camera với cảm biến chính 50MP và mạng 5G. Ngoài ra, màn hình Note 12 Pro 5G có kích thước khá lớn khoảng 6.67 inch, tấm nền AMOLED, tần số quét 120Hz khiến chiếc điện thoại nổi bật trong tầm giá dưới 8 triệu.",
+      "category": "Xiaomi",
+      "price": 9000000,
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/t/gtt7766.jpg",
+      "likes": 0,
+      "order": 0,
+      "id": 13
+    },
+    {
+      "name": "Xiaomi 12T",
+      "description": "Xiaomi 12T là sản phẩm được nhiều tín đồ công nghệ đánh giá cao với màn hình AMOLED 6.67 inch độ phân giải cao, tần số quét 120Hz, chip MediaTek Dimensity 8100-Ultra, RAM 8GB và bộ nhớ trong 128GB. Thêm vào đó camera chính 108MP hỗ trợ chống rung OIS và sạc nhanh 120W cho trải nghiệm sử dụng cực chất. ",
+      "category": "Xiaomi",
+      "price": "10000000",
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/x/i/xiaomi-12t-den_1.jpg",
+      "likes": 0,
+      "order": 0,
+      "id": 14
+    },
+    {
+      "name": "Xiaomi 12 Pro (5G)",
+      "description": "Là một trong những dòng smartphone chủ lực của hãng, Xiaomi 12 Pro sở hữu một thiết kế ấn tượng cùng hiệu năng vượt trội mang lại trải nghiệm dùng mượt mà. Bên cạnh đó, máy còn được trang bị hệ thống camera vô cùng chất lượng cho ra những bức ảnh chuyên nghiệp. Tháng 10/2022, Xiaomi đã trình làng phiên bản Xiaomi 12T Pro cực kỳ ấn tượng mà quý khách nên xem qua!",
+      "category": "Xiaomi",
+      "price": "15000000",
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/x/i/xiaomi-12-pro_arenamobiles.jpg",
+      "likes": 0,
+      "order": 0,
+      "id": 15
+    },
+    {
+      "name": "Samsung Galaxy S23 Ultra",
+      "description": "Samsung S23 Ultra là dòng điện thoại cao cấp của Samsung, sở hữu camera độ phân giải 200MP ấn tượng, chip Snapdragon 8 Gen 2 mạnh mẽ, bộ nhớ RAM 8GB mang lại hiệu suất xử lý vượt trội cùng khung viền vuông vức sang trọng. Sản phẩm được ra mắt từ đầu năm 2023.",
+      "category": "Samsung",
+      "price": "24000000",
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/g/a/galaxys23ultra_front_green_221122_2.jpg",
+      "likes": 0,
+      "order": 0,
+      "id": 1
+    },
+    {
+      "name": "Samsung Galaxy Z Fold5",
+      "description": "Samsung Z Fold5 được trang bị con chip Snapdragon 8 Gen 2 mạnh mẽ, bộ nhớ RAM 12GB, ống kính chính 50MP, camera selfie bên ngoài 10MP, camera màn hình chính 4MP. Bên cạnh đó, điện thoại Samsung này còn sở hữu tấm nền Dynamic AMOLED 2X, kích thước màn hình 7.6 inch khi mở, độ phân giải 2K cho hình ảnh rõ nét cùng với dung lượng pin 4.400 mAh thoải mái sử dụng.",
+      "category": "Samsung",
+      "price": "40000000",
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/b/4/b48cd136-7366-4d01-8d58-8ee3d5dc93b7_1.jpg",
+      "likes": 5,
+      "order": 0,
+      "id": 17
+    },
+    {
+      "name": "OPPO Reno10 5G",
+      "description": "Điện thoại OPPO Reno 10 sở hữu hiệu năng vô cùng mạnh mẽ khi được trang bị chipset MediaTek Dimensity 7050. Chất lượng hình ảnh của máy có độ sắc nét, mượt mà nhờ sở hữu tấm nền 3D AMOLED hiện đại với độ phân giải FHD+ 2412 × 1080 pixel cùng tần số quét 120Hz. Bên cạnh đó, Reno 10 còn sở hữu một vài ưu điểm khác như dung lượng Pin 5000mAh với sạc nhanh SUPERVOOC 67W cùng cụm camera 64MP sắc nét giúp nâng cao trải nghiệm của người dùng.",
+      "category": "OPPO",
+      "price": "11000000",
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/r/e/reno10_5g_-_combo_product_-_blue.png",
+      "likes": 0,
+      "order": 0,
+      "id": 18
+    },
+    {
+      "name": "OPPO Find N2 Flip",
+      "description": "OPPO Find N2 Flip dự kiến sẽ là chiếc điện thoại khiến nhiều tín đồ công nghệ quan tâm khi sở hữu thiết kế bắt mắt, cùng màn hình ấn tượng. Đi cùng với đó là hệ thống camera của thiết bị cũng cao cấp không kém khi tích hợp đầy đủ các cảm biến, cùng đa dạng tính năng chụp ảnh.",
+      "category": "OPPO",
+      "price": "20000000",
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/n/2/n2_flip_-_combo_product_-_black.png",
+      "likes": 4,
+      "order": 0,
+      "id": 19
+    },
+    {
+      "name": "iPhone 13 Pro Max",
+      "description": "iPhone 12 ra mắt cách đây chưa lâu, thì những tin đồn mới nhất về iPhone 13 Pro Max đã khiến bao tín đồ công nghệ ngóng chờ. Cụm camera được nâng cấp, màu sắc mới, đặc biệt là màn hình 120Hz với phần notch được làm nhỏ gọn hơn chính là những điểm làm cho thu hút mọi sự chú ý trong năm nay.",
+      "category": "Iphone",
+      "price": "25000000",
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/3/_/3_51_1_7.jpg",
+      "likes": 9,
+      "order": 0,
+      "id": 20
     }
   ],
   "posts": [
@@ -142,6 +213,16 @@
       "category": "Games",
       "date": "10/8/2023",
       "id": 6
+    },
+    {
+      "title": "LMHT: Dìm hàng Faker, \"vua vạ miệng\" Thorin nhận gạch đá dữ dội",
+      "content1": "Nam MC Thorin mới đây đã phải hứng chịu chỉ trích nặng nề sau phát ngôn gây tranh cãi liên quan đến hai tuyển thủ LMHT Faker và Xiaohu.",
+      "content2": "Faker vẫn luôn là tượng đài của giới LMHT nói riêng và thể thao điện tử nói chung với bộ sưu tập thành tích đồ sộ cùng sức ảnh hưởng to lớn. Ở thời điểm hiện tại, mặc dù không còn giữ được phong độ đỉnh cao nhưng Quỷ Vương vẫn cho thấy vai trò quan trọng của mình tại T1. Giai đoạn Faker phải nghỉ thi đấu vì chấn thương là minh chứng rõ nét nhất cho việc tập thể T1 dễ bị đánh bại ra sao nếu thiếu Faker ở khu vực đường giữa.",
+      "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/dim-hang-faker-nam-mc-nhan-gach-da-du-doi-3.jpg",
+      "content3": "Tuy nhiên mới đây, Thorin - một MC tại khu vực LEC đã \"đụng tổ kiến lửa\" khi có phát ngôn gây tranh cãi về Faker. Cụ thể, sau khi chứng kiến màn trình diễn của Xiaohu cùng WBG tại vòng loại khu vực LPL, MC Thorin đã không tiếc lời khen cho cựu đường giữa của RNG. Tuy nhiên, anh chàng MC này lại lôi Faker vào câu chuyện và \"hạ thấp\" Quỷ Vương để ca ngợi Xiaohu.\n\"Xiaohu is who Faker fans think he is\" (tạm dịch \"Xiaohu chính là người mà fan Faker nghĩ rằng Quỷ Vương là như vậy\") - MC Thorin viết trên Twitter.\nNgay lập tức, sự so sánh có phần khập khiễng này đã nhận về vô số ý kiến chỉ trích từ phía game thủ LMHT nói chung và fan hâm mộ Faker nói riêng. Xét về lịch sử đối đầu cũng như bảng thành tích, Faker hoàn toàn vượt trội so với Xiaohu, đồng thời đường giữa của WBG luôn là bại tướng của Quỷ Vương và T1 tại các kì CKTG. Xiaohu cũng chưa thể giành lấy danh hiệu CKTG đầu tiên mặc dù đã sở hữu 2 chiếc cúp MSI trong màu áo RNG.",
+      "category": "Games",
+      "date": "14/8/2023",
+      "id": 7
     }
   ]
 }

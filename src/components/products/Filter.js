@@ -3,6 +3,7 @@ import "./Filter.css";
 import { useNavigate } from "react-router-dom";
 import useLocalStorageState from "use-local-storage-state";
 import { apiGetAllProduct } from "../../services/api/products";
+import { MoneyFormatter } from "../formatter/Formatter";
 
 const Filter = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const Filter = () => {
           {allProducts?.map((product) => (
             <div
               key={product?.id}
-              className="relative bg-gray-200 p-4 rounded hover:bg-gray-400"
+              className="relative border border-[#ccc] border-solid p-4 rounded hover:bg-[#ccc]"
             >
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 cursor-pointer">
                 <img
@@ -50,7 +51,7 @@ const Filter = () => {
                   <h3 className="text-sm text-gray-700">{product?.name}</h3>
                 </div>
                 <p className="text-sm font-medium text-gray-900">
-                  {product?.price}
+                  {MoneyFormatter.format(product?.price)}
                 </p>
               </div>
               <div className="flex justify-end">

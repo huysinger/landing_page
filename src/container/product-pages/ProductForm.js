@@ -113,6 +113,22 @@ const ProductForm = () => {
                             placeholder="url"
                             className="url-input px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
                           />
+                          <input
+                            {...register("likes", {
+                              valueAsNumber: true,
+                            })}
+                            value={0}
+                            name="likes"
+                            className="hidden"
+                          />
+                          <input
+                            {...register("order", {
+                              valueAsNumber: true,
+                            })}
+                            value={0}
+                            name="order"
+                            className="hidden"
+                          />
                           <button
                             onClick={handleRemove}
                             tabIndex={-1}

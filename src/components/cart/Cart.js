@@ -8,7 +8,6 @@ import { MoneyFormatter } from "../formatter/Formatter";
 const Cart = () => {
   const navigate = useNavigate();
   const [cart, setCart] = useLocalStorageState("cart", {});
-  const [order, setOrder] = useState([]);
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,7 +23,6 @@ const Cart = () => {
     const storedData = localStorage.getItem("cart");
     if (storedData) {
       const parsedData = JSON.parse(storedData);
-      setOrder(parsedData);
     }
   }, []);
   const handleUpdateQuantity = (productId, state) => {
@@ -49,8 +47,7 @@ const Cart = () => {
   const getProducts = () => Object.values(cart || {});
 
   const totalPrice = getProducts().reduce(
-    (accumulator, product) =>
-      accumulator + parseInt(product.price) * 1000000 * product.quantity,
+    (accumulator, product) => accumulator + product.price * product.quantity,
     0
   );
 
@@ -79,11 +76,7 @@ const Cart = () => {
               removeProductCallback={() => handleRemoveProduct(product.id)}
               handleUpdateQuantity={handleUpdateQuantity}
             />
-            <p>
-              {MoneyFormatter.format(
-                parseInt(product.price) * 1000000 * product.quantity
-              )}
-            </p>
+            <p>{MoneyFormatter.format(product.price * product.quantity)}</p>
           </div>
         ))}
       </div>

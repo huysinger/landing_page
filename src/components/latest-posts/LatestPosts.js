@@ -1,14 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { apiGetAllPost } from "../../services/api/posts";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 const LatestPosts = () => {
   const [latestPost, setLatestPost] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/posts")
+    apiGetAllPost()
       .then((response) => {
         setLatestPost(response.data);
       })

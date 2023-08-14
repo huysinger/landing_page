@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiGetAllProduct } from "../../services/api/products";
 import { Helmet } from "react-helmet";
+import { MoneyFormatter } from "../../components/formatter/Formatter";
 
 const CategoryPage = (userInfo) => {
   const navigate = useNavigate();
@@ -109,7 +110,7 @@ const CategoryPage = (userInfo) => {
                     </p>
                   </div>
                   <p className="text-sm font-medium text-gray-900">
-                    {product?.price}
+                    {MoneyFormatter.format(product?.price)}
                   </p>
                 </div>
               </div>
