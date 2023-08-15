@@ -7,8 +7,8 @@ import Carousel from "react-multi-carousel";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const HotProducts = () => {
-  const [hotProduct, setHotProduct] = useState([]);
+const BestSeller = () => {
+  const [bestseller, setBestseller] = useState([]);
   const [cart, setCart] = useLocalStorageState("cart", {});
   const addToCart = (product) => {
     product.quantity = 1;
@@ -33,7 +33,7 @@ const HotProducts = () => {
   useEffect(() => {
     apiGetAllProduct()
       .then((response) => {
-        setHotProduct(response.data);
+        setBestseller(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -56,8 +56,8 @@ const HotProducts = () => {
       slidesToSlide: 1,
     },
   };
-  const sortedProduct = hotProduct.sort((a, b) => b.likes - a.likes);
-  const largestLikeProduct = sortedProduct.slice(0, 5);
+  const sortedProduct = bestseller.sort((a, b) => b.order - a.order);
+  const largestOrderProduct = sortedProduct.slice(0, 5);
   return (
     <div>
       <ToastContainer limit={4} />
@@ -71,7 +71,7 @@ const HotProducts = () => {
             autoPlaySpeed={3500}
             infinite={true}
           >
-            {largestLikeProduct?.map((product) => (
+            {largestOrderProduct?.map((product) => (
               <div
                 key={product?.id}
                 className=" m-3 border border-[#ccc] border-solid p-4 rounded-lg hover:bg-[#ccc]"
@@ -111,4 +111,4 @@ const HotProducts = () => {
     </div>
   );
 };
-export default HotProducts;
+export default BestSeller;

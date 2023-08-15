@@ -10,7 +10,7 @@
   font-size: 100%;
 }
 .header {
-  z-index: 1;
+  z-index: 1001;
   background-color: var(--maincolor);
   width: 100%;
   position: fixed;

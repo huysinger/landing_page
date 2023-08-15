@@ -9,6 +9,7 @@ import LatestPosts from "../../components/latest-posts/LatestPosts";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import HotProducts from "../../components/products/HotProducts";
+import BestSeller from "../../components/products/BestSeller";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -92,6 +93,7 @@ const HomePage = () => {
         <h1 className="best-seller">Sản phẩm hot🔥</h1>
         <HotProducts />
         <h1 className="best-seller">Bán chạy nhất</h1>
+        <BestSeller />
       </div>
     </div>
   );

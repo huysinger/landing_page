@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import useLocalStorageState from "use-local-storage-state";
 import { apiGetAllProduct } from "../../services/api/products";
 import { MoneyFormatter } from "../formatter/Formatter";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Filter = () => {
   const navigate = useNavigate();
@@ -21,6 +23,17 @@ const Filter = () => {
       ...prevCart,
       [product.id]: product,
     }));
+    toast.success(`Đã thêm ${product.name} vào giỏ hàng!`, {
+      position: "top-right",
+      autoClose: 3500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      className: "black-background",
+    });
   };
 
   useEffect(() => {
@@ -28,6 +41,7 @@ const Filter = () => {
   }, []);
   return (
     <div>
+      <ToastContainer limit={4} />
       <div>
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {allProducts?.map((product) => (

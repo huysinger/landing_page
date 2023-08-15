@@ -11,6 +11,8 @@ import { Helmet } from "react-helmet";
 import { AiOutlineHeart } from "react-icons/ai";
 import useLocalStorageState from "use-local-storage-state";
 import { MoneyFormatter } from "../../components/formatter/Formatter";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetail = (userInfo) => {
   const { id } = useParams();
@@ -28,6 +30,18 @@ const ProductDetail = (userInfo) => {
       ...prevCart,
       [detailProduct.id]: detailProduct,
     }));
+    toast.success(`Đã thêm ${detailProduct.name} vào giỏ hàng!`, {
+      position: "top-right",
+      autoClose: 3500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      className: "black-background",
+    });
+    toast.clearWaitingQueue();
   };
 
   const readDetailProduct = async () => {
@@ -61,6 +75,7 @@ const ProductDetail = (userInfo) => {
         menu={menuHeader}
         userInfo={userInfo}
       />
+      <ToastContainer limit={1} />
       <div className="p-4">
         <section className="text-gray-700 body-font overflow-hidden bg-white">
           <div className="container px-5 py-24 mx-auto">
