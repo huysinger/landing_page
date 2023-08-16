@@ -6,6 +6,7 @@ import "./Cart.css";
 import { MoneyFormatter } from "../formatter/Formatter";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { apiEditProduct } from "../../services/api/products";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -21,12 +22,8 @@ const Cart = () => {
       return updatedCart;
     });
   };
-  useEffect(() => {
-    const storedData = localStorage.getItem("cart");
-    if (storedData) {
-      const parsedData = JSON.parse(storedData);
-    }
-  }, []);
+  const storedData = localStorage.getItem("cart");
+  const parsedData = JSON.parse(storedData);
   const handleUpdateQuantity = (productId, state) => {
     setCart((prevCart) => {
       const updatedCart = { ...prevCart };
@@ -49,7 +46,13 @@ const Cart = () => {
   const getProducts = () => Object.values(cart || {});
   const cartStatus = localStorage.getItem("cart");
 
-  const handleOrder = () => {
+  const handleOrder = async (data) => {
+    for (const itemId in data) {
+      const item = data[itemId];
+      const itemIdNumber = parseInt(itemId);
+      const orderValue = item.quantity;
+      await apiEditProduct({ ...data, id: itemIdNumber, order: orderValue });
+    }
     if (cartStatus) {
       localStorage.removeItem("cart");
       toast.success(`Đặt hàng thành công!`, {
@@ -87,11 +90,11 @@ const Cart = () => {
   );
 
   return (
-    <section className="cart-body">
+    <section className="py-[56px] px-[10%]">
       <ToastContainer limit={1} />
-      <h1>Giỏ hàng</h1>
+      <h1 className="text-[24px] p-[1%] font-medium">Giỏ hàng</h1>
 
-      <div className="container-cart">
+      <div className="flex flex-col">
         {cartStatus ? (
           getProducts().map((product) => (
             <div
@@ -129,7 +132,7 @@ const Cart = () => {
           Tổng thanh toán: {MoneyFormatter.format(totalPrice)}
         </p>
         <button
-          onClick={handleOrder}
+          onClick={() => handleOrder(parsedData)}
           className="font-medium px-4 py-2 bg-[#d70018] hover:bg-[#df3346] rounded text-white"
         >
           Đặt hàng

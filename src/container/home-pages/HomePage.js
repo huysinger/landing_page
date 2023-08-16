@@ -1,6 +1,4 @@
 import Header from "../../components/headers/Header";
-import Products from "../../components/products/Products";
-import "./HomePage.css";
 import { menuHeader } from "../../components/headers/Header";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -53,7 +51,7 @@ const HomePage = () => {
         userInfo={userInfo}
         menu={menuHeader}
       />
-      <div className="page-body">
+      <div className="py-[56px] px-[10%]">
         <Carousel
           responsive={responsive}
           draggable={false}
@@ -64,7 +62,7 @@ const HomePage = () => {
           <img
             src={"https://cellphones.com.vn/media/wysiwyg/1200x400.jpg"}
             alt="banner"
-            className="banner w-[100%] h-[420px] cursor-pointer"
+            className="pt-[4px] m-auto w-[100%] h-[420px] cursor-pointer"
             onClick={() => navigate("/product")}
           />
           <img
@@ -72,13 +70,15 @@ const HomePage = () => {
               "https://cdn2.cellphones.com.vn/690x300,webp,q100/https://dashboard.cellphones.com.vn/storage/78FD7174-0C85-4E5D-A07D-4BD660CAF818.png"
             }
             alt="banner"
-            className="banner w-[100%] h-[420px] cursor-pointer"
+            className="pt-[4px] m-auto w-[100%] h-[420px] cursor-pointer"
             onClick={() => navigate("/product/18")}
           />
         </Carousel>
         <div className="info">
-          <h1 className="info-name">CellphoneS</h1>
-          <p className="info-description">
+          <h1 className="text-[32px] font-medium flex justify-center py-[20px] text-[#d70018]">
+            CellphoneS
+          </h1>
+          <p className="text-[20px] flex text-center">
             Chúng tôi là công ty hoạt động trong lĩnh vực bán lẻ các sản phẩm
             công nghệ, cùng với dịch vụ sửa chữa điện thoại, máy tính và lĩnh
             vực truyền thông giải trí. Vào 10/2022, CellphoneS có 105 cửa hàng
@@ -90,9 +90,13 @@ const HomePage = () => {
           </p>
         </div>
         <LatestPosts />
-        <h1 className="best-seller">Sản phẩm hot🔥</h1>
+        <h1 className="text-[32px] font-medium flex py-[48px] px-[32px] justify-left text-[#d70018]">
+          Sản phẩm hot🔥
+        </h1>
         <HotProducts />
-        <h1 className="best-seller">Bán chạy nhất</h1>
+        <h1 className="text-[32px] font-medium flex py-[48px] px-[32px] justify-left text-[#d70018]">
+          Bán chạy nhất
+        </h1>
         <BestSeller />
       </div>
     </div>

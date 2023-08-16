@@ -19,7 +19,9 @@ const LatestPosts = () => {
   return (
     <div>
       <div className="flex justify-between">
-        <h1 className="best-seller">Bài viết mới</h1>
+        <h1 className="text-[32px] font-medium flex py-[48px] px-[32px] justify-left text-[#d70018]">
+          Bài viết mới
+        </h1>
         <p
           onClick={() => {
             navigate("/post");

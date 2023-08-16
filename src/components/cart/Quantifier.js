@@ -23,16 +23,6 @@ export const Quantifier = ({
     setValue((prevState) => prevState + 1);
   };
   const cartData = localStorage.getItem("cart");
-  if (cartData) {
-    const productData = JSON.parse(cartData);
-    for (const productId in productData) {
-      if (productData.hasOwnProperty(productId)) {
-        const product = productData[productId];
-        const productQuantity = product.quantity;
-        console.log(`Quantity: ${productQuantity}`);
-      }
-    }
-  }
 
   return (
     <div className="flex">

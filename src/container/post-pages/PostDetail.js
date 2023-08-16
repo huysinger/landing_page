@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { apiReadDetailPost, apiRemovePost } from "../../services/api/posts";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./PostPage.css";
+
 const PostDetail = (userInfo) => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const PostDetail = (userInfo) => {
         menu={menuHeader}
         userInfo={userInfo}
       />
-      <div className="post-body">
+      <div className="py-[56px] px-[10%]">
         <div>
           <button
             onClick={() => navigate(`/post/edit/${detailPost?.id}`)}

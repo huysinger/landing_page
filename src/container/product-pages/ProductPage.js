@@ -1,5 +1,4 @@
 import Header from "../../components/headers/Header";
-import "./ProductPage.css";
 import { menuHeader } from "../../components/headers/Header";
 import { apiGetAllProduct } from "../../services/api/products";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +28,7 @@ const ProductPage = (userInfo) => {
         menu={menuHeader}
         userInfo={userInfo}
       />
-      <div className="product-page-body">
+      <div className="py-[56px] px-[10%]">
         <button
           onClick={() => navigate("/product/add")}
           className="m-4 w-[60px] h-[40px] bg-[#d70018] text-white rounded"

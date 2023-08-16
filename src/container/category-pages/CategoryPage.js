@@ -1,5 +1,4 @@
 import Header, { menuHeader } from "../../components/headers/Header";
-import "./CategoryPage.css";
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiGetAllProduct } from "../../services/api/products";
@@ -47,7 +46,7 @@ const CategoryPage = (userInfo) => {
         menu={menuHeader}
         userInfo={userInfo}
       />
-      <div className="category-body">
+      <div className="py-[56px] px-[10%]">
         <div>
           <div className="d m-4 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
             <button
