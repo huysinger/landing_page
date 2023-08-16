@@ -51,9 +51,14 @@ const Cart = () => {
       const item = data[itemId];
       const itemIdNumber = parseInt(itemId);
       const orderValue = item.quantity;
-      await apiEditProduct({ ...data, id: itemIdNumber, order: orderValue });
+      await apiEditProduct({
+        ...item,
+        id: itemIdNumber,
+        order: item.order + parseInt(orderValue),
+      });
     }
-    if (cartStatus) {
+
+    if (cartStatus && Object.values(cart || {}).length != 0) {
       localStorage.removeItem("cart");
       toast.success(`Đặt hàng thành công!`, {
         position: "top-right",
@@ -81,6 +86,10 @@ const Cart = () => {
       toast.clearWaitingQueue();
     }
   };
+  const handleRemoveAll = () => {
+    localStorage.removeItem("cart");
+    navigate("/cart");
+  };
   useEffect(() => {
     getProducts();
   }, []);
@@ -95,7 +104,7 @@ const Cart = () => {
       <h1 className="text-[24px] p-[1%] font-medium">Giỏ hàng</h1>
 
       <div className="flex flex-col">
-        {cartStatus ? (
+        {cartStatus && Object.values(cart || {}).length != 0 ? (
           getProducts().map((product) => (
             <div
               key={product.id}
@@ -131,12 +140,20 @@ const Cart = () => {
         <p className="font-medium my-4">
           Tổng thanh toán: {MoneyFormatter.format(totalPrice)}
         </p>
-        <button
-          onClick={() => handleOrder(parsedData)}
-          className="font-medium px-4 py-2 bg-[#d70018] hover:bg-[#df3346] rounded text-white"
-        >
-          Đặt hàng
-        </button>
+        <div className="flex flex-row">
+          <button
+            onClick={() => handleRemoveAll()}
+            className="font-medium mx-8 px-4 py-2 border border-solid border-[#d70018] hover:bg-[#df3346] hover:text-white rounded text-black"
+          >
+            Xóa tất cả
+          </button>
+          <button
+            onClick={() => handleOrder(parsedData)}
+            className="font-medium px-4 py-2 bg-[#d70018] hover:bg-[#df3346] rounded text-white"
+          >
+            Đặt hàng
+          </button>
+        </div>
       </div>
     </section>
   );

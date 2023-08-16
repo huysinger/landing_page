@@ -1,29 +1,28 @@
-import { useState } from "react";
+import { useEffect } from "react";
 
 export const Quantifier = ({
   removeProductCallback,
   handleUpdateQuantity,
   productId,
 }) => {
-  const [value, setValue] = useState(1);
+  const storedData = localStorage.getItem("cart");
+  const parsedData = JSON.parse(storedData);
+  const getQuantity = (data, id) => {
+    const item = data[id];
+    const itemQuantity = item.quantity;
+    return itemQuantity;
+  };
+  const value = getQuantity(parsedData, productId);
   const reduce = () => {
     handleUpdateQuantity(productId, "decrease");
-
-    setValue((prevState) => {
-      const updatedValue = prevState - 1;
-      if (updatedValue === 0) {
-        removeProductCallback(productId);
-      }
-      return updatedValue;
-    });
+    if (value === 1) {
+      removeProductCallback(productId);
+    }
   };
 
   const increase = () => {
     handleUpdateQuantity(productId, "increase");
-    setValue((prevState) => prevState + 1);
   };
-  const cartData = localStorage.getItem("cart");
-
   return (
     <div className="flex">
       <button
@@ -36,9 +35,7 @@ export const Quantifier = ({
       <input
         type="number"
         value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
+        readOnly
         className="w-24 text-center border-2 border-solid border-[#ccc]"
       />
       <button

@@ -9,7 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const BestSeller = () => {
   const [bestseller, setBestseller] = useState([]);
-  const [cart, setCart] = useLocalStorageState("cart", {});
+  const [cart, setCart] = useLocalStorageState("cart", []);
+
   const addToCart = (product) => {
     product.quantity = 1;
 
@@ -17,6 +18,7 @@ const BestSeller = () => {
       ...prevCart,
       [product.id]: product,
     }));
+
     toast.success(`Đã thêm ${product.name} vào giỏ hàng!`, {
       position: "top-right",
       autoClose: 3500,
