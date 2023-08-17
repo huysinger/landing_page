@@ -4,7 +4,7 @@ import { apiGetAllProduct } from "../../services/api/products";
 import { MoneyFormatter } from "../formatter/Formatter";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const BestSeller = () => {
@@ -12,12 +12,19 @@ const BestSeller = () => {
   const [cart, setCart] = useLocalStorageState("cart", []);
 
   const addToCart = (product) => {
-    product.quantity = 1;
+    if (cart && cart[product.id]) {
+      setCart((prevCart) => ({
+        ...prevCart,
+        [product.id]: { ...product, quantity: cart[product.id].quantity + 1 },
+      }));
+    } else {
+      product.quantity = 1;
 
-    setCart((prevCart) => ({
-      ...prevCart,
-      [product.id]: product,
-    }));
+      setCart((prevCart) => ({
+        ...prevCart,
+        [product.id]: product,
+      }));
+    }
 
     toast.success(`Đã thêm ${product.name} vào giỏ hàng!`, {
       position: "top-right",
@@ -62,8 +69,6 @@ const BestSeller = () => {
   const largestOrderProduct = sortedProduct.slice(0, 5);
   return (
     <div>
-      <ToastContainer limit={4} />
-
       <div>
         <div>
           <Carousel

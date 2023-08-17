@@ -4,7 +4,8 @@ import { apiGetAllProduct } from "../../services/api/products";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import Filter from "../../components/products/Filter";
+import { ToastContainer } from "react-toastify";
+import Products from "../../components/products/Products";
 
 const ProductPage = (userInfo) => {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ const ProductPage = (userInfo) => {
       <Helmet>
         <title>Sản phẩm</title>
       </Helmet>
+      <ToastContainer limit={4} />
       <Header
         menu={menuHeader}
         userInfo={userInfo}
@@ -35,7 +37,7 @@ const ProductPage = (userInfo) => {
         >
           Add
         </button>
-        <Filter />
+        <Products />
       </div>
     </div>
   );

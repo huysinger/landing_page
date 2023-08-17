@@ -23,12 +23,22 @@ const ProductDetail = (userInfo) => {
   const [detailProduct, setDetailProduct] = useState(null);
   const [cart, setCart] = useLocalStorageState("cart", {});
   const addToCart = (detailProduct) => {
-    detailProduct.quantity = 1;
+    if (cart && cart[detailProduct?.id]) {
+      setCart((prevCart) => ({
+        ...prevCart,
+        [detailProduct.id]: {
+          ...detailProduct,
+          quantity: cart[detailProduct.id].quantity + 1,
+        },
+      }));
+    } else {
+      detailProduct.quantity = 1;
 
-    setCart((prevCart) => ({
-      ...prevCart,
-      [detailProduct.id]: detailProduct,
-    }));
+      setCart((prevCart) => ({
+        ...prevCart,
+        [detailProduct.id]: detailProduct,
+      }));
+    }
     toast.success(`Đã thêm ${detailProduct.name} vào giỏ hàng!`, {
       position: "top-right",
       autoClose: 3500,
@@ -149,6 +159,9 @@ const ProductDetail = (userInfo) => {
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                     <span className="text-gray-600 ml-3">0 Reviews</span>
+                    <span className="text-gray-600 ml-3">
+                      Đã bán: {detailProduct?.order}
+                    </span>
                   </span>
                 </div>
                 <p className="leading-relaxed">{detailProduct?.description}</p>

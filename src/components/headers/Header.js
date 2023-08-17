@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-
+import CartWidget from "./CartWidget";
 export const menuHeader = [
   {
     title: "Trang Chủ",
@@ -29,6 +28,7 @@ export const menuHeader = [
 const Header = ({ menu, userInfo }) => {
   const navigate = useNavigate();
   const userString = localStorage.getItem("userReact");
+
   return (
     <div className="header">
       <ul
@@ -61,14 +61,14 @@ const Header = ({ menu, userInfo }) => {
         {userInfo !== undefined && (
           <ul className="nav-auth">
             <li className="auth-nav">
-              <Link to={`/cart`}>
-                <AiOutlineShoppingCart style={{ fontSize: "24px" }} />
-              </Link>
+              <CartWidget />
             </li>
             <li className="auth-nav">
-              <Link to={`/info/${JSON.parse(userString).user.id}`}>
-                {JSON.parse(userString).user.name}
-              </Link>
+              {userString && (
+                <Link to={`/info/${JSON.parse(userString).user.id}`}>
+                  {JSON.parse(userString).user.name}
+                </Link>
+              )}
             </li>
             <li className="auth-nav">
               <button

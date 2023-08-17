@@ -8,6 +8,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import HotProducts from "../../components/products/HotProducts";
 import BestSeller from "../../components/products/BestSeller";
+import { ToastContainer } from "react-toastify";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
+      <ToastContainer limit={4} />
       <Helmet>
         <title>CellphoneS</title>
       </Helmet>

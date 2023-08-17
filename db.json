@@ -39,10 +39,10 @@
       "price": "16000000",
       "category": "Iphone",
       "likes": 12,
-      "order": 15,
+      "order": 19,
       "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/1/4/14_1_9_2_9.jpg",
       "description": "Cuối năm 2020, bộ 4 iPhone 12 đã được ra mắt với nhiều cái tiến. Sau đó, mọi sự quan tâm lại đổ dồn vào sản phẩm tiếp theo – iPhone 13. Vậy iP 13 sẽ có những gì nổi bật, hãy tìm hiểu ngay sau đây nhé!",
-      "quantity": 1
+      "quantity": 3
     },
     {
       "name": "Google Pixel 6",
@@ -50,10 +50,10 @@
       "category": "Google",
       "price": 10000000,
       "likes": 11,
-      "order": 10,
+      "order": 16,
       "url": "https://cdn.tgdd.vn/Products/Images/42/233009/google-pixel-6-600x600.jpg",
       "id": 10,
-      "quantity": 1
+      "quantity": 4
     },
     {
       "name": "Xiaomi 13 Ultra",
@@ -61,7 +61,7 @@
       "category": "Xiaomi",
       "price": 20000000,
       "likes": 10,
-      "order": 9,
+      "order": 18,
       "url": "https://mobileworld.com.vn/uploads/product/Xiaomi_13_series/thumbs/xiaomi_13_ultra_den.webp",
       "id": 11,
       "quantity": 1
@@ -74,7 +74,8 @@
       "likes": 9,
       "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/_/t_m_18.png",
       "id": 12,
-      "order": 20
+      "order": 22,
+      "quantity": 2
     },
     {
       "name": "Xiaomi Redmi Note 12 Pro 5G",
@@ -133,8 +134,9 @@
       "price": "11000000",
       "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/r/e/reno10_5g_-_combo_product_-_blue.png",
       "likes": 0,
-      "order": 0,
-      "id": 18
+      "order": 20,
+      "id": 18,
+      "quantity": 20
     },
     {
       "name": "OPPO Find N2 Flip",
@@ -152,7 +154,7 @@
       "category": "Iphone",
       "price": "25000000",
       "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/3/_/3_51_1_7.jpg",
-      "likes": 9,
+      "likes": 10,
       "order": 0,
       "id": 20
     }

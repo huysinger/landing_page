@@ -8,12 +8,15 @@ const InfoPage = (userInfo) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [detailUser, setDetailUser] = useState(null);
+  const user = localStorage.getItem("userReact");
 
   const readDetailUser = async () => {
     try {
-      if (id) {
+      if (id && user) {
         const data = await apiReadDetailUser(id);
         setDetailUser(data?.data);
+      } else {
+        navigate("/");
       }
     } catch (error) {
       navigate("/login");
