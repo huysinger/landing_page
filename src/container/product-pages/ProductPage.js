@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { ToastContainer } from "react-toastify";
 import Products from "../../components/products/Products";
+import Footer from "../../components/footer/Footer";
 
 const ProductPage = (userInfo) => {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ const ProductPage = (userInfo) => {
         </button>
         <Products />
       </div>
+      <Footer />
     </div>
   );
 };

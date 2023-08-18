@@ -2,12 +2,14 @@ import Header, { menuHeader } from "../../components/headers/Header";
 import { Helmet } from "react-helmet";
 import { apiGetAllPost } from "../../services/api/posts";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { AiOutlineHome } from "react-icons/ai";
+import Footer from "../../components/footer/Footer";
 
 const PostPage = (userInfo) => {
   const navigate = useNavigate();
   const [allPost, setAllPost] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState();
   const getAllPost = async () => {
     const data = await apiGetAllPost();
     setAllPost(data?.data);
@@ -16,7 +18,16 @@ const PostPage = (userInfo) => {
   useEffect(() => {
     getAllPost();
   }, []);
-
+  function getFilteredList() {
+    if (!selectedCategory) {
+      return allPost;
+    }
+    return allPost?.filter((post) => post.category === selectedCategory);
+  }
+  const filteredList = useMemo(getFilteredList, [selectedCategory, allPost]);
+  function handleCategoryChange(event) {
+    setSelectedCategory(event.target.value);
+  }
   return (
     <div>
       <Helmet>
@@ -35,13 +46,17 @@ const PostPage = (userInfo) => {
       <div className="px-[10%] flex">
         <div className="left-sidebar w-1/6 mt-8 border border-solid border-[#ccc] rounded-xl">
           <div>
-            <button className="items-center flex m-4 group relative border-gray-200 border border-solid p-2 rounded hover:bg-gray-200 focus:bg-gray-200 hover:cursor-pointer">
+            <button
+              onClick={handleCategoryChange}
+              className="items-center flex m-4 group relative border-gray-200 border border-solid p-2 rounded hover:bg-gray-200 focus:bg-gray-200 hover:cursor-pointer"
+            >
               <AiOutlineHome className="mr-2" />
               Tất Cả
             </button>
             {setOfCategory?.map((val, index) => (
               <button
                 key={index}
+                onClick={handleCategoryChange}
                 className="items-center flex m-4 group relative border-gray-200 border border-solid p-2 rounded hover:bg-gray-200 focus:bg-gray-200 hover:cursor-pointer"
                 value={val}
               >
@@ -51,7 +66,7 @@ const PostPage = (userInfo) => {
           </div>
         </div>
         <div className="right-content pl-10">
-          {allPost?.toReversed().map((post, index) => (
+          {filteredList?.toReversed().map((post, index) => (
             <div
               key={index}
               className="flex my-8 rounded-xl border-solid border border-[#ccc]"
@@ -77,6 +92,7 @@ const PostPage = (userInfo) => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

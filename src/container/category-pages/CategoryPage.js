@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { apiGetAllProduct } from "../../services/api/products";
 import { Helmet } from "react-helmet";
 import { MoneyFormatter } from "../../components/formatter/Formatter";
+import Footer from "../../components/footer/Footer";
 
 const CategoryPage = (userInfo) => {
   const navigate = useNavigate();
@@ -117,6 +118,7 @@ const CategoryPage = (userInfo) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

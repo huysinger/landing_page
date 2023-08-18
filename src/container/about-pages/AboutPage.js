@@ -1,8 +1,8 @@
 import Header from "../../components/headers/Header";
 import "./AboutPage.css";
 import { menuHeader } from "../../components/headers/Header";
-import { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import Footer from "../../components/footer/Footer";
 
 const AboutPage = (userInfo) => {
   return (
@@ -66,6 +66,7 @@ const AboutPage = (userInfo) => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
