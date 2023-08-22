@@ -42,7 +42,7 @@ const Products = () => {
       draggable: true,
       progress: undefined,
       theme: "light",
-      className: "black-background",
+      progressClassName: "toast-message",
     });
   };
 

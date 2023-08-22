@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { usePagination, DOTS } from "./usePagination";
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 
@@ -10,6 +10,10 @@ const Pagination = (props) => {
     currentPage,
     pageSize,
   } = props;
+  const [activePage, setActivePage] = useState(currentPage);
+  useEffect(() => {
+    setActivePage(currentPage);
+  }, [currentPage]);
   const paginationRange = usePagination({
     currentPage,
     totalCount,
@@ -19,6 +23,7 @@ const Pagination = (props) => {
   if (paginationRange.length < 2) {
     return null;
   }
+
   const onNext = () => {
     if (currentPage < lastPage) {
       onPageChange(currentPage + 1);
@@ -32,10 +37,11 @@ const Pagination = (props) => {
     }
   };
   let lastPage = paginationRange[paginationRange.length - 1];
+
   return (
     <ul className="flex items-center mt-4">
       <li
-        className="p-2 rounded-full hover:bg-gray-300 bg-gray-200 cursor-pointer"
+        className="p-2 rounded-full hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
         onClick={onPrevious}
       >
         <AiOutlineDoubleLeft />
@@ -51,19 +57,26 @@ const Pagination = (props) => {
             </li>
           );
         }
-
+        const isActive = pageNumber === activePage;
         return (
           <button
             key={index}
-            className="cursor-pointer mx-4 focus:border border-solid border-gray-300 rounded p-2"
-            onClick={() => onPageChange(pageNumber)}
+            className={`cursor-pointer mx-4 rounded-full p-2 ${
+              isActive
+                ? "bg-gray-400 text-white"
+                : "hover:bg-gray-200 active:bg-gray-300"
+            }`}
+            onClick={() => {
+              onPageChange(pageNumber);
+              setActivePage(pageNumber);
+            }}
           >
             {pageNumber}
           </button>
         );
       })}
       <li
-        className="p-2 rounded-full hover:bg-gray-300 bg-gray-200 cursor-pointer"
+        className="p-2 rounded-full hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
         onClick={onNext}
       >
         <AiOutlineDoubleRight />
