@@ -1,8 +1,10 @@
 import { AiFillFacebook, AiFillYoutube } from "react-icons/ai";
 import { BiLogoTiktok } from "react-icons/bi";
 import { SiZalo } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="bg-white border-t border-solid mt-10 border-gray-300">
       <div className="mx-auto w-full max-w-screen-2xl">
@@ -35,36 +37,32 @@ const Footer = () => {
             </h2>
             <ul className="text-black text-sm">
               <li className="mb-4">
-                <a
-                  href="/about"
-                  className=" hover:underline"
+                <p
+                  onClick={() => {
+                    navigate("/about");
+                  }}
+                  className=" hover:underline cursor-pointer"
                 >
                   About us
-                </a>
+                </p>
               </li>
               <li className="mb-4">
-                <a
-                  href="#"
-                  className="hover:underline"
-                >
-                  Tuyển dụng
-                </a>
+                <p className=" hover:underline cursor-pointer">Tuyển dụng</p>
               </li>
               <li className="mb-4">
-                <a
-                  href="#"
-                  className="hover:underline"
-                >
+                <p className=" hover:underline cursor-pointer">
                   Trung tâm bảo hành chính hãng
-                </a>
+                </p>
               </li>
               <li className="mb-4">
-                <a
-                  href="/post"
-                  className="hover:underline"
+                <p
+                  onClick={() => {
+                    navigate("/post");
+                  }}
+                  className=" hover:underline cursor-pointer"
                 >
                   Tin tức
-                </a>
+                </p>
               </li>
             </ul>
           </div>

@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import useLocalStorageState from "use-local-storage-state";
 import { apiGetAllProduct } from "../../services/api/products";
 import { MoneyFormatter } from "../formatter/Formatter";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Pagination from "../pagination/Pagination";
+
+let PageSize = 8;
 
 const Products = () => {
   const navigate = useNavigate();
   const [allProducts, setAllProduct] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
   const [cart, setCart] = useLocalStorageState("cart", {});
   const getAllProduct = async () => {
     const data = await apiGetAllProduct();
@@ -31,7 +35,7 @@ const Products = () => {
     }
     toast.success(`Đã thêm ${product.name} vào giỏ hàng!`, {
       position: "top-right",
-      autoClose: 3500,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -45,11 +49,19 @@ const Products = () => {
   useEffect(() => {
     getAllProduct();
   }, []);
+  const currentPageData = useMemo(() => {
+    if (!allProducts) {
+      return [];
+    }
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    return allProducts.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, allProducts]);
   return (
     <div>
-      <div>
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {allProducts?.map((product) => (
+      <div className="flex flex-col items-center">
+        <div className="mt-6 mb-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {currentPageData?.map((product) => (
             <div
               key={product?.id}
               className="relative border border-[#ccc] border-solid p-4 rounded hover:bg-[#ccc]"
@@ -84,6 +96,15 @@ const Products = () => {
             </div>
           ))}
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalCount={allProducts ? allProducts.length : 0}
+          pageSize={PageSize}
+          onPageChange={(page) => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            return setCurrentPage(page);
+          }}
+        />
       </div>
     </div>
   );

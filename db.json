@@ -133,7 +133,7 @@
       "category": "OPPO",
       "price": "11000000",
       "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/r/e/reno10_5g_-_combo_product_-_blue.png",
-      "likes": 0,
+      "likes": 1,
       "order": 22,
       "id": 18,
       "quantity": 2
@@ -157,6 +157,16 @@
       "likes": 10,
       "order": 0,
       "id": 20
+    },
+    {
+      "name": "Samsung Galaxy Z Flip5",
+      "description": "Samsung Z Flip 5 có màn chính hình rộng 6.7 inch, với độ phân giải Full HD+ (1080 x 2636 Pixels), cụm camera trước 10MP và camera sau 12MP, rõ đến từng chi tiết. Cấu hình của sản phẩm mạnh mẽ nhờ hệ điều hành Android 10, con chipset mạnh mẽ Snapdragon 8 gen 2, với chip đồ họa tạo hình ảnh hiển thị hàng triệu màu sắc khác nhau. Sản phẩm có RAM 8GB, bộ nhớ trong 512GB.",
+      "category": "Samsung",
+      "price": "26000000",
+      "url": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/d/4/d4a672c5-4709-4056-9f7f-72d6d70c2c1d_1.jpg",
+      "likes": 0,
+      "order": 0,
+      "id": 21
     }
   ],
   "posts": [
@@ -229,6 +239,16 @@
       "category": "Games",
       "date": "14/8/2023",
       "id": 7
+    },
+    {
+      "title": "Đánh giá OnePlus Nord 3: Khó tìm được chiếc máy nào ngon hơn, nhưng vẫn chưa hoàn hảo",
+      "content1": "OnePlus Nord 3 đang là chiếc smartphone đáng mua nhất trong tầm giá dưới 12 triệu khi có mọi yếu tố đều vượt trội hơn so với các sản phẩm cùng phân khúc.",
+      "content2": "Vốn dĩ mới quay lại thị trường Việt Nam không lâu, các sản phẩm cũng không mấy đa dạng nhưng từng sản phẩm OnePlus làm ra đều mang tính cạnh tranh rất cao đối với các đối thủ cùng phân khúc.\n\nOnePlus Nord 3 cũng chính là một trong số đó, trở thành ứng cử viên sáng giá nhất trong phân khúc smartphone cận cao cấp. Bản thân mình đã được trải nghiệm em nó khá lâu và sau đây chính là những nhận xét của mình về mẫu smartphone tuyệt vời này!",
+      "url": "https://cdn.sforum.vn/sforum/wp-content/uploads/2023/08/Chi_tiet_OnePlus_Nord_3_9-2-e1691860816855.jpg",
+      "content3": "Theo ý kiến cá nhân thì mình thấy OnePlus Nord 3 chính là chiếc smartphone đáng mua nhất trong tầm giá dưới 12 triệu đồng ở thời điểm hiện tại. Hầu như trong tầm giá này chưa có chiếc điện thoại nào hoàn hảo như OnePlus Nord 3, từ màn hình, hiệu năng, camera,... tất cả mọi thứ đều rất tốt. Nếu bạn đang tìm một chiếc điện thoại toàn vẹn nhất trong phân khúc này thì nên tham khảo em OnePlus Nord 3 này nhé.",
+      "category": "Công nghệ",
+      "date": "22/8/2023",
+      "id": 8
     }
   ]
 }

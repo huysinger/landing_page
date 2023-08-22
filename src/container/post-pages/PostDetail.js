@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { apiReadDetailPost, apiRemovePost } from "../../services/api/posts";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
 
 const PostDetail = (userInfo) => {
   const { id } = useParams();
@@ -26,6 +27,7 @@ const PostDetail = (userInfo) => {
       console.log("Error");
     }
   };
+
   useEffect(() => {
     readDetailPost();
   }, detailPost);
@@ -74,6 +76,7 @@ const PostDetail = (userInfo) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

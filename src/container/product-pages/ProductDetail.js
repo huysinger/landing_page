@@ -12,6 +12,7 @@ import useLocalStorageState from "use-local-storage-state";
 import { MoneyFormatter } from "../../components/formatter/Formatter";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../../components/footer/Footer";
 
 const ProductDetail = (userInfo) => {
   const { id } = useParams();
@@ -41,7 +42,7 @@ const ProductDetail = (userInfo) => {
     }
     toast.success(`Đã thêm ${detailProduct.name} vào giỏ hàng!`, {
       position: "top-right",
-      autoClose: 3500,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -84,7 +85,7 @@ const ProductDetail = (userInfo) => {
         menu={menuHeader}
         userInfo={userInfo}
       />
-      <ToastContainer limit={1} />
+      <ToastContainer limit={3} />
       <div className="p-4">
         <section className="text-gray-700 body-font overflow-hidden bg-white">
           <div className="container px-5 py-24 mx-auto">
@@ -233,6 +234,7 @@ const ProductDetail = (userInfo) => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

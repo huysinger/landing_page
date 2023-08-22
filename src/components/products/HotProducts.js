@@ -26,7 +26,7 @@ const HotProducts = () => {
     }
     toast.success(`Đã thêm ${product.name} vào giỏ hàng!`, {
       position: "top-right",
-      autoClose: 3500,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

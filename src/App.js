@@ -1,6 +1,7 @@
 import "./App.css";
+import { useEffect } from "react";
 import HomePage from "./container/home-pages/HomePage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ProductPage from "./container/product-pages/ProductPage";
 import AboutPage from "./container/about-pages/AboutPage";
 import LoginPage from "./container/login-pages/LoginPage";
@@ -16,9 +17,18 @@ import PostDetail from "./container/post-pages/PostDetail";
 import PostForm from "./container/post-pages/PostForm";
 
 function App() {
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+  }
   return (
     <div className="App">
       <BrowserRouter>
+        <ScrollToTop />
+
         <Routes>
           <Route path="/">
             <Route

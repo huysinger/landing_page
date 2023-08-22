@@ -5,11 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
 import { AiOutlineHome } from "react-icons/ai";
 import Footer from "../../components/footer/Footer";
+import Pagination from "../../components/pagination/Pagination";
+
+let PageSize = 4;
 
 const PostPage = (userInfo) => {
   const navigate = useNavigate();
   const [allPost, setAllPost] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
   const getAllPost = async () => {
     const data = await apiGetAllPost();
     setAllPost(data?.data);
@@ -28,6 +32,14 @@ const PostPage = (userInfo) => {
   function handleCategoryChange(event) {
     setSelectedCategory(event.target.value);
   }
+  const currentPostData = useMemo(() => {
+    if (!filteredList) {
+      return [];
+    }
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    return filteredList.toReversed().slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, filteredList]);
   return (
     <div>
       <Helmet>
@@ -44,7 +56,7 @@ const PostPage = (userInfo) => {
         Add
       </button>
       <div className="px-[10%] flex">
-        <div className="left-sidebar w-1/6 mt-8 border border-solid border-[#ccc] rounded-xl">
+        <div className="left-sidebar w-1/5 mt-8 border border-solid border-[#ccc] rounded-xl">
           <div>
             <button
               onClick={handleCategoryChange}
@@ -66,7 +78,7 @@ const PostPage = (userInfo) => {
           </div>
         </div>
         <div className="right-content pl-10">
-          {filteredList?.toReversed().map((post, index) => (
+          {currentPostData?.map((post, index) => (
             <div
               key={index}
               className="flex my-8 rounded-xl border-solid border border-[#ccc]"
@@ -90,6 +102,17 @@ const PostPage = (userInfo) => {
               </div>
             </div>
           ))}
+          <div className="flex justify-end">
+            <Pagination
+              currentPage={currentPage}
+              totalCount={filteredList ? filteredList.length : 0}
+              pageSize={PageSize}
+              onPageChange={(page) => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                return setCurrentPage(page);
+              }}
+            />
+          </div>
         </div>
       </div>
       <Footer />

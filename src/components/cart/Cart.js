@@ -130,7 +130,7 @@ const Cart = (userInfo) => {
                   removeProductCallback={() => handleRemoveProduct(product.id)}
                   handleUpdateQuantity={handleUpdateQuantity}
                 />
-                <p>{MoneyFormatter.format(product.price * product.quantity)}</p>
+                <p>{MoneyFormatter.format(product.price)}</p>
               </div>
             ))
           ) : (
